@@ -143,7 +143,7 @@ end
 
 -- End the Profile
 Log("This is the end of Elwynn Forest questing profile");
-LoadAndRunQuestProfile(Human_L13_L20_Westfall.lua);
+--LoadAndRunQuestProfile(Human_L13_L20_Westfall.lua);
 --LoadAndRunQuestProfile(".\\Classic\\Alliance\\Human_L13_L20_Westfall.lua);
 --LoadAndRunQuestProfile(".\\Questing\\Classic\\Alliance\\Human_L13_L20_Westfall.lua");
---StopQuestProfile();
+StopQuestProfile();
