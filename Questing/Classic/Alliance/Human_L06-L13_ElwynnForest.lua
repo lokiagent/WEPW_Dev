@@ -92,10 +92,10 @@ CompleteEntireQuest(112); -- Collecting Kelp
 AcceptQuestUsingDB(114); -- The Escape
 TurnInQuestUsingDB(114); -- The Escape
 
---Group 6: The East Orgeon Logging Company......I mean 
+--Group 6: The East India Trading Company......I mean Eastvale Logging Camp
 AcceptQuestUsingDB(52); -- Protect the Frontier
-CompleteObjectiveOfQuest(52,1,2);
---CompleteEntireQuest(52); -- Protect the Frontier
+--CompleteObjectiveOfQuest(52,1,2);
+CompleteEntireQuest(52); -- Protect the Frontier
 TurnInQuestUsingDB(35); -- Further Concerns
 AcceptQuestUsingDB(37); -- Find the Lost Guards
 TurnInQuestUsingDB(37); -- Find the Lost Guards
@@ -103,12 +103,47 @@ TurnInQuestUsingDB(45); -- Discover Rolf's Fate
 AcceptQuestUsingDB(83); -- Red Linen Goods
 AcceptQuestUsingDB(5545); -- A Bundle of Trouble
 CompleteEntireQuest(5545); -- A Bundle of Trouble
+--KillMobsUntilItem("Red Linen Bandanas", "Defias Wizard", 6); -- Red Linen Bandanas
 CompleteObjectiveOfQuest(83,1) -- Red Linen Goods
-AcceptQuestUsingDB(184); -- Grind and Farm for "Furlbrow's Deed"
+--QuestGoToPoint(-8937.736,-767.3322,69.50501)
 AcceptQuestUsingDB(123); -- Grind and Farm for "The Collector"
+--QuestGoToPoint(-9057.363,-1093.999,72.16206)
+AcceptQuestUsingDB(184); -- Grind and Farm for "Furlbrow's Deed"
+TurnInQuestUsingDB(83); -- Red Linen Goods
 
---AcceptQuestUsingDB(); -- Report to Gryan Stoutmantle
+-- The Grinding Interlude
+if Player.Level < 12 then
+    QuestGoToPoint(-8937.736,-767.3322,69.50501);
+    GrindAreaUntilLevel(12);
+end
+
+CompleteObjectiveOfQuest(88,1); -- Princess Must Die!
+CompleteEntireQuest(123); -- The Collector
+TurnInQuestUsingDB(88); -- Princess Must Die!
+
+--Group 7: At Dawn Look to the Westbrook Garrison
+TurnInQuestUsingDB(239); -- Westbrook Garrison Needs Help!
+AcceptQuestUsingDB(11); -- Riverpaw Gnoll Bounty
+TurnInQuestUsingDB(71); -- Report to Thomas
+CompleteEntireQuest(39); -- Deliver Thomas' Report
+AcceptQuestUsingDB(59); -- Cloth and Leather Armor
+CompleteEntireQuest(46); --Bounty on Murlocs
+if HasPlayerFinishedQuest(11) ~= true then
+    QuestGoToPoint(-8937.736,-767.3322,69.50501)
+    CompleteObjectiveOfQuest(11,1); -- Riverpaw Gnoll Bounty
+end
+CompleteEntireQuest(147,1); -- Manhunt
+TurnInQuestUsingDB(11); -- Riverpaw Gnoll Bounty
+TurnInQuestUsingDB(59); -- Cloth and Leather Armor
+
+-- The Grinding Exposition
+if Player.Level < 13 then
+    GrindAreaUntilLevel(13);
+end
+
 -- End the Profile
 Log("This is the end of Elwynn Forest questing profile");
---LoadAndRunQuestProfile(string Name)
-StopQuestProfile();
+LoadAndRunQuestProfile(Human_L13_L20_Westfall.lua);
+--LoadAndRunQuestProfile(".\\Classic\\Alliance\\Human_L13_L20_Westfall.lua);
+--LoadAndRunQuestProfile(".\\Questing\\Classic\\Alliance\\Human_L13_L20_Westfall.lua");
+--StopQuestProfile();

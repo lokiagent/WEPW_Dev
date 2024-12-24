@@ -94,5 +94,4 @@ TurnInQuestUsingDB(2158); -- Rest and Relaxation
 
 Log("[Northshire Abbey] Questing completed!");
 
-StopQuestProfile();
---LoadAndRunQuestProfile([Human]L06-13_ElwynnForest.lua)
+LoadAndRunQuestProfile(Human_L06-13_ElwynnForest.lua)
