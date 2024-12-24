@@ -49,7 +49,7 @@ TurnInQuestUsingDB(36); -- [9] Westfall Stew (Delivery)
 CompleteEntireQuest(22); -- [9-13] Goretusk Livers (8)
 CompleteObjectiveOfQuest(38,1); -- [10] Westfall Stew (Collecting Ingredients)
 CompleteObjectiveOfQuest(38,2); -- [10] Westfall Stew (Collecting Ingredients)
-CompleteObjectiveOfQuest(38,13); -- [10] Westfall Stew (Collecting Ingredients)
+CompleteObjectiveOfQuest(38,3); -- [10] Westfall Stew (Collecting Ingredients)
 CompleteObjectiveOfQuest(38,4); -- [10] Westfall Stew (Collecting Ingredients)
 
 -- Grind Step: To Level 15
