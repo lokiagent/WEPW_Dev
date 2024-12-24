@@ -12,6 +12,13 @@ function SetVendors()
     SetQuestSellVendors(vendorIDs);
 end
 
+----
+--- Quest Objectives
+----
+HarvestWatcher = {}; -- New Table to store Harvest Watcher IDs
+HarvestWatcher[1] = 480; -- Rusty Harvest Gloem ID
+OkraFarm = CreateObjective("KillMobsAndLoot",4,3,4,38,TableToList(HarvestWatcher)); -- Harvest Watchers
+
 ----Level 10-12: Initial Quests----
 --[10] Westfall Stew (Quest ID: 36)
 --[10] Westfall Stew (Quest ID: 38)
@@ -47,10 +54,12 @@ AcceptQuestUsingDB(151); -- [9] Poor Old Blanchy
 AcceptQuestUsingDB(36); -- [9] Westfall Stew (Delivery)
 TurnInQuestUsingDB(36); -- [9] Westfall Stew (Delivery)
 CompleteEntireQuest(22); -- [9-13] Goretusk Livers (8)
-CompleteObjectiveOfQuest(38,1); -- [10] Westfall Stew (Collecting Ingredients)
-CompleteObjectiveOfQuest(38,2); -- [10] Westfall Stew (Collecting Ingredients)
-CompleteObjectiveOfQuest(38,3); -- [10] Westfall Stew (Collecting Ingredients)
-CompleteObjectiveOfQuest(38,4); -- [10] Westfall Stew (Collecting Ingredients)
+CompleteEntireQuest(38); -- [10] Westfall Stew (Collecting Ingredients)
+--CompleteObjectiveOfQuest(38,1); -- [10] Westfall Stew (Collecting Ingredients)
+--CompleteObjectiveOfQuest(38,2); -- [10] Westfall Stew (Collecting Ingredients)
+--CompleteObjectiveOfQuest(38,3); -- [10] Westfall Stew (Collecting Ingredients)
+--CompleteObjectiveOfQuest(38,4); -- [10] Westfall Stew (Collecting Ingredients)
+--KillMobsUntilItem("Okra",OkraFarm,3);
 
 -- Grind Step: To Level 15
 QuestGoToPoint(-9715.307,1088.223,15.62057);
