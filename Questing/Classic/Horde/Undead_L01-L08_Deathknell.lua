@@ -54,7 +54,8 @@ TurnInQuestUsingDB(376); AcceptQuestUsingDB(6395);-- Turn-in: The Damned; Accept
 AcceptQuestUsingDB(3902); -- Accept: Scavenging Deathknell
 AcceptQuestUsingDB(380); -- Accept: Nightweb's Hollow
 CompleteEntireQuest(3902); -- Complete: Scavenging Deathknell
-DoObjective(KillNightYWeb); DoObjective(KillNightWeb); -- Quest Objective(s): Nightweb's Hollow
+CompleteEntireQuest(380); -- Complete: Nightweb's Hollow
+--DoObjective(KillNightYWeb); DoObjective(KillNightWeb); -- Quest Objective(s): Nightweb's Hollow
 
 --Group 2.5: Grind the Ensure Level 5 and accept Class Quest
 GrindAreaUntilLevel(5);
@@ -77,17 +78,31 @@ end
 CompleteEntireQuest(3901); AcceptQuestUsingDB(380); -- Turn-in: Rattling the Rattle Cages; 
 CompleteEntireQuest(380); AcceptQuestUsingDB(381); -- Turn-in: Nightweb's Hollow; Accept: The Scarlet Crusade
 ----------------------------------------Marla's Last Wish-----------------------------
-QuestGoToPoint(1982,1376,63); -- Spawn Point for Samuel Fipps
-KillMobsUntilItem("Samuel's Remains",FuckUpSamuelFipps,1);
-QuestGoToPoint(1875.951,1623.005,95.0472); -- Pathing to get to Marla's Grave
-CompleteEntireQuest(6395); -- Quest Objective(s): Marla's Last Wish
+if not HasPlayerFinishedQuest(6395) then
+    QuestGoToPoint(1982,1376,63); -- Spawn Point for Samuel Fipps
+    KillMobsUntilItem("Samuel's Remains",FuckUpSamuelFipps,1);
+    QuestGoToPoint(1875.951,1623.005,95.0472); -- Pathing to get to Marla's Grave
+    CompleteEntireQuest(6395); -- Quest Objective(s): Marla's Last Wish
+end;
 --------------------------------------------------------------------------------------
 CompleteEntireQuest(381); -- Complete: The Scarlet Crusade
 CompleteEntireQuest(382); AcceptQuestUsingDB(383); -- Complete: The Red Messenger; Aceept: Vital Intelligence
-AcceptQuestUsingDB(8); -- Accept: A Rogue's Deal
+CompleteEntireQuest(8); -- Accept: A Rogue's Deal
+CompleteEntireQuest(590); -- A Rogue's Deal
 
-QuestGoToPoint(2108.698,1128.137,36.49763); -- Pathing to get to grind area
-GrindAreaUntilLevel(8);
+if Player.Level < 8 then
+    QuestGoToPoint(1789.029, 1279.251, 112.0708); -- Pathing to get to grind area
+    GrindAreaUntilLevel(8);
+end;
+
+--Going to Brill and Training
+QuestGoToPoint(2239.364, 251.1285, 34.24391); -- Pathing to Brill Inn
+--if GetPlayerClass() == "Rogue" then --Rogue
+--    --QuestGoToPoint(2270.368, 243.8468, 41.11491); -- Pathing to get to Trainer
+--end
+--GetNearestClassTrainer();
+--Log("Training at Nearest Class Trainer: "..GetNearestClassTrainer().Name);
+--TrainAtNearestClassTrainer();
 
 -- QED: Deathknell
 StopQuestProfile();
