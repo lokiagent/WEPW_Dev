@@ -161,19 +161,19 @@ public class EraShadowPriest : Rotation
                     {
                         if (!IsNPC(target))
                         {
-                            if (Api.Spellbook.CanCast("Smite"))
+                            if (Api.Spellbook.CanCast("Mind Blast"))
                             {
                                 Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("Casting Smite");
                                 Console.ResetColor();
-                                if (Api.Spellbook.Cast("Smite"))
+                                if (Api.Spellbook.Cast("Mind Blast"))
                                 {
                                     return true;
                                 }
                             }
                             else
                             {
-                                Console.WriteLine("Smite is not ready to be cast.");
+                                Console.WriteLine("Mind Blast is not ready to be cast.");
                             }
                         }
                         else
@@ -307,16 +307,6 @@ public class EraShadowPriest : Rotation
                 return true;
             }
         }
-
-        if (Api.Spellbook.CanCast("Smite") && mana > 50 && !me.Auras.Contains("Shadowform", true))
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Casting Smite");
-            Console.ResetColor();
-            if (Api.Spellbook.Cast("Smite"))
-
-                return true;
-        }
         if (Api.Equipment.HasItem(EquipmentSlot.Extra) && Api.HasMacro("Shoot") && !me.IsShooting())
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -328,18 +318,6 @@ public class EraShadowPriest : Rotation
                 return true;
             }
         }
-        if (Api.Spellbook.CanCast("Attack") && !me.IsAutoAttacking())
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Casting Attack");
-            Console.ResetColor();
-            if (Api.Spellbook.Cast("Attack"))
-            {
-                return true;
-            }
-        }
-
-
         return base.CombatPulse();
     }
 

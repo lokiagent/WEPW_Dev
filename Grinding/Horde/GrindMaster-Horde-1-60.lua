@@ -2,6 +2,7 @@ Author = "Lawl edit of Speedy for Alliance";
 -----List of Zone IDs for easy reference----
 --TirisfalGlades=1420
 --Durotar=1411
+--Mulgore=1412
 --------------End Zone ID List--------------
 --------------Vendor Blacklist--------------
 BlackListSellVendorByName("Kayla Smithe"); --Warlock Vendor PoS that no one cal really sell too
@@ -57,14 +58,18 @@ SetQuestRepairAt(30)
 SetQuestSellAt(2)
 
 -- Setting Grinding Mobs Based on Level
-Tirisfal4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{1501, 1502, 1890});
-Durotar4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{3098, 3124});
-Tirisfal7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1506, 1507});
+Tirisfal4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{1501,1502,1890});
+Durotar4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{3098,3124});
+Mulgore4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{2955});
+Tirisfal7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1506,1507});
 Durotar7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3101});
+Mulgore7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{2956,2969});
 Tirisfal10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1547,1553});
 Durotar10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3099,3125});
+Mulgore10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{2956,2958});
 Tirisfal13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1536,1537,1662});
 Durotar13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3100,3223});
+Mulgore13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{2957,2960});
 
 -- Grinding to Level 4
 if Player.Level < 4 then
@@ -73,6 +78,8 @@ if Player.Level < 4 then
         GrindUntilLvl(4, Tirisfal4, true, true);
     elseif GetZoneID() == 1411 then
         GrindUntilLvl(4, Durotar4, true, true);
+    elseif GetZoneID() == 1412 then
+        GrindUntilLvl(4, Mulgore4, true, true);
     end;
 elseif Player.Level == 4 then
     -- Training for Level 4 Priests
@@ -93,6 +100,8 @@ if Player.Level >= 4 and Player.Level < 7 then
         GrindUntilLvl(7, Tirisfal7, true, true);
     elseif GetZoneID() == 1411 then
         GrindUntilLvl(7, Durotar7, true, true);
+    elseif GetZoneID() == 1412 then
+        GrindUntilLvl(7, Mulgore7, true, true);
     end;
 end;
 -- Grinding to Level 10
@@ -102,6 +111,8 @@ if Player.Level >= 7 and Player.Level < 10 then
         GrindUntilLvl(10, Tirisfal10, true, true);
     elseif GetZoneID() == 1411 then
         GrindUntilLvl(10, Durotar10, true, true);
+    elseif GetZoneID() == 1412 then
+        GrindUntilLvl(10, Mulgore10, true, true);
     end;
 end;
 -- Grinding to Level 13
@@ -111,6 +122,8 @@ if Player.Level >= 10 and Player.Level < 13 then
         GrindUntilLvl(13, Tirisfal13, true, true);
     elseif GetZoneID() == 1411 then
         GrindUntilLvl(13, Durotar13, true, true);
+    elseif GetZoneID() == 1412 then
+        GrindUntilLvl(13, Mulgore13, true, true);
     end;
 end;
 
