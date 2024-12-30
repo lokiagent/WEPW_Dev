@@ -63,7 +63,7 @@ Tirisfal7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1506, 1
 Durotar7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3101});
 Tirisfal10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1547,1553});
 Durotar10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3099,3125});
-Tirisfal13
+Tirisfal13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1536,1537,1662});
 Durotar13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3100,3223});
 
 -- Grinding to Level 4
