@@ -1,0 +1,103 @@
+[
+  {
+    "Name": "Heroic Strike",
+    "ID": 0,
+    "Description": "",
+    "Conditions": [
+      {
+        "ParentGUID": "00000000-0000-0000-0000-000000000000",
+        "GUID": "17b7ea20-e943-4216-a0ae-ffeb377d8b1f",
+        "ConditionType": "HasTargetCondition",
+        "TrueBranchGUID": "ecb0d7db-bd26-4f4e-979f-552275cdec57",
+        "FalseBranchGUID": "622037ba-6da7-4ffd-969f-a636ca5d2168",
+        "Operator": 2,
+        "Target": 0
+      },
+      {
+        "PlayerFlag": 0,
+        "ParentGUID": "17b7ea20-e943-4216-a0ae-ffeb377d8b1f",
+        "GUID": "ecb0d7db-bd26-4f4e-979f-552275cdec57",
+        "ConditionType": "PlayerFlagCondition",
+        "TrueBranchGUID": "fb5a4a89-38d9-4fae-b373-48be70b100a1",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 2,
+        "Target": 0
+      },
+      {
+        "Type": 1,
+        "ParentGUID": "ecb0d7db-bd26-4f4e-979f-552275cdec57",
+        "GUID": "fb5a4a89-38d9-4fae-b373-48be70b100a1",
+        "ConditionType": "PowerCondition",
+        "TrueBranchGUID": "0daf9d35-e699-4475-baa8-3ccc698d2a85",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 3,
+        "Target": 15
+      },
+      {
+        "Result": true,
+        "ParentGUID": "fb5a4a89-38d9-4fae-b373-48be70b100a1",
+        "GUID": "0daf9d35-e699-4475-baa8-3ccc698d2a85",
+        "ConditionType": "ConditionScriptResult",
+        "TrueBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 2,
+        "Target": 0
+      },
+      {
+        "Result": false,
+        "ParentGUID": "17b7ea20-e943-4216-a0ae-ffeb377d8b1f",
+        "GUID": "622037ba-6da7-4ffd-969f-a636ca5d2168",
+        "ConditionType": "ConditionScriptResult",
+        "TrueBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 2,
+        "Target": 0
+      }
+    ]
+  },
+  {
+    "Name": "Charge",
+    "ID": 0,
+    "Description": "",
+    "Conditions": [
+      {
+        "ParentGUID": "00000000-0000-0000-0000-000000000000",
+        "GUID": "f75eb1da-573c-4715-99a5-69f9c9046680",
+        "ConditionType": "HasTargetCondition",
+        "TrueBranchGUID": "85af649c-03cc-49f0-ae12-bb0e8f8028e7",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 2,
+        "Target": 0
+      },
+      {
+        "ParentGUID": "f75eb1da-573c-4715-99a5-69f9c9046680",
+        "GUID": "85af649c-03cc-49f0-ae12-bb0e8f8028e7",
+        "ConditionType": "RangeCondition",
+        "TrueBranchGUID": "2e777dc1-1cf4-4496-b362-59dd14ca0fe3",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 0,
+        "Target": 8
+      },
+      {
+        "PlayerFlag": 0,
+        "ParentGUID": "85af649c-03cc-49f0-ae12-bb0e8f8028e7",
+        "GUID": "2e777dc1-1cf4-4496-b362-59dd14ca0fe3",
+        "ConditionType": "PlayerFlagCondition",
+        "TrueBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "FalseBranchGUID": "f2d9d644-a93e-4576-af28-b5d495a0a1ec",
+        "Operator": 2,
+        "Target": 0
+      },
+      {
+        "Result": true,
+        "ParentGUID": "2e777dc1-1cf4-4496-b362-59dd14ca0fe3",
+        "GUID": "f2d9d644-a93e-4576-af28-b5d495a0a1ec",
+        "ConditionType": "ConditionScriptResult",
+        "TrueBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "FalseBranchGUID": "00000000-0000-0000-0000-000000000000",
+        "Operator": 2,
+        "Target": 0
+      }
+    ]
+  }
+]

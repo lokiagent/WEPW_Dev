@@ -1,11 +1,10 @@
 -- Initialize settings
-StartMobAvoidance();
+--StartMobAvoidance();
 UseDBToRepair(true);
 UseDBToSell(true);
 SetQuestRepairAt(30);
 SetQuestSellAt(2);
 Player = GetPlayer();
---dofile("Profiles\\Questing\\[A]_EK_FlightPaths.lua");
 
 Log("Current Zone ID: "..GetZoneID());
 Log("Current Player Position:"..GetPlayer().Position);
@@ -16,6 +15,8 @@ function SetVendors()
     SetQuestSellVendors(vendorIDs);
 end
 -- Functions to set Flight Paths
+
+
 function WestfallFP() 
     QuestGoToPoint(-10627.74,1038.647,34.12702);    
     Units = GetUnitsList();
@@ -317,8 +318,17 @@ if HasPlayerFinishedQuest(139)==false then
 end;
 AcceptQuestUsingDB(140); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
 --CompleteEntireQuest(140); Log("Completing: [16] Captain Sanders' Hidden Treasure"); -- Can't Complete at this time due to Mesh issues with water
-
+if (Player.Level < 21) then 
+    Log("Grind to 21");
+    QuestGoToPoint(-10984.42, 2092.964, 2.36268);
+    Grind21 = {};
+    Grind21[1] = 1216;
+    Grind21 = CreateObjective("KillMobsAndLoot",1,10,1,152,TableToList(Grind21));
+    GrindUntilLvl(21,Grind21,true);
+end;
 -- End of Profile
+CompleteEntireQuest(104); -- [20] The Coastal Menace
+CompleteEntireQuest(152); -- [21] The Coast isn't Clear
 Log("This is the end of Westfall questing profile");
 StopQuestProfile();
 

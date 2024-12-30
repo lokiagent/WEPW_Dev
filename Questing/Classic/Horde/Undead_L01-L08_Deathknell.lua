@@ -7,6 +7,31 @@ SetQuestSellAt(2)
 IgnoreLowLevelQuests=false
 Player = GetPlayer()
 
+Log("Current Zone ID: "..GetZoneID());
+Log("Current Player Position:"..GetPlayer().Position);
+
+--------------------------------------------------------------------------------------
+---------  Setting Manual Training as Training isn't working for some parts  ---------
+--------------------------------------------------------------------------------------
+function TrainRogue() 
+    QuestGoToPoint(1859.822, 1562.821, 94.30527); -- Pathing to get to Trainer    
+    Units = GetUnitsList();
+    foreach Unit in Units do
+        Log(Unit.Name);
+        if (Unit.Name == "David Trias") and (IsUnitValid(Unit)== true) then
+            Log("Found Rogue Trainer!");         
+            InteractWithUnit(Unit);
+            SleepPlugin(5000);
+        end; -- IF
+    end; -- For Each
+end; 
+local function Training()
+    Log("Training " .. Player.Name)
+    UseMacro("Gossip1")
+    SleepPlugin(2000)
+    UseMacro("TrainMe")
+    SleepPlugin(2000)
+end
 --------------------------------------------------------------------------------------
 ---  Setting Manual Quest Objectives as Autoquesting isn't working for some parts  ---
 --------------------------------------------------------------------------------------
@@ -39,8 +64,9 @@ BlackListSellVendorByName("Kayla Smithe"); --Warlock Vendor PoS that no one cal 
 --SetDrink("Refreshing Spring Water", 25)
 
 -- Grind Step: To Level 3
-GrindAreaUntilLevel(3);
-
+if Player.Level < 3 then
+    GrindAreaUntilLevel(3); 
+end
 -- Quest Chains and Groups
 -- Group 1: Initial Quest Acceptance
 AcceptQuestUsingDB(363); TurnInQuestUsingDB(363); AcceptQuestUsingDB(364); -- Accept: Rude Awakening; Turn-in; Rude Awakening; Accept: The Mindless Ones
@@ -87,22 +113,30 @@ end;
 --------------------------------------------------------------------------------------
 CompleteEntireQuest(381); -- Complete: The Scarlet Crusade
 CompleteEntireQuest(382); AcceptQuestUsingDB(383); -- Complete: The Red Messenger; Aceept: Vital Intelligence
+
+--if GetPlayerClass() == "Rogue" and Player.Level >= 6 then --Rogue
+--    QuestGoToPoint(1859.822, 1562.821, 94.30527); -- Pathing to get to Trainer
+--    TrainRogue();
+--    Training();
+--end
+
 CompleteEntireQuest(8); -- Accept: A Rogue's Deal
 CompleteEntireQuest(590); -- A Rogue's Deal
 
-if Player.Level < 8 then
-    QuestGoToPoint(1789.029, 1279.251, 112.0708); -- Pathing to get to grind area
-    GrindAreaUntilLevel(8);
+--Going to Brill and Training
+
+if (Player.Level < 8) then 
+    Log("Grind to 8");
+    --QuestGoToPoint(1789.029, 1279.251, 112.0708);
+    Grind08 = {};
+    Grind08[1] = 1506;
+    Grind08[2] = 1507;
+    Grind08[3] = 1667;
+    Grind08 = CreateObjective("KillMobsAndLoot",1,10,1,590,TableToList(Grind08));
+    GrindUntilLvl(8,Grind08,true);
 end;
 
---Going to Brill and Training
 QuestGoToPoint(2239.364, 251.1285, 34.24391); -- Pathing to Brill Inn
---if GetPlayerClass() == "Rogue" then --Rogue
---    --QuestGoToPoint(2270.368, 243.8468, 41.11491); -- Pathing to get to Trainer
---end
---GetNearestClassTrainer();
---Log("Training at Nearest Class Trainer: "..GetNearestClassTrainer().Name);
---TrainAtNearestClassTrainer();
 
 -- QED: Deathknell
 StopQuestProfile();

@@ -6,6 +6,7 @@ SetQuestRepairAt(30)
 SetQuestSellAt(2)
 IgnoreLowLevelQuests=false
 Player = GetPlayer()
+
 Log("Current Zone ID: "..GetZoneID());
 Log("Current Player Position:"..GetPlayer().Position);
 --------------------------------------------------------------------------------------
@@ -117,7 +118,14 @@ TurnInQuestUsingDB(369); Log("Turn-in: A New Plague"); --AcceptQuestUsingDB(372)
 
 
 -- Step The Last: Final Grind
-
+if (Player.Level < 14) then 
+    Log("Grind to 14");
+    QuestGoToPoint(3034.54,388.2232,0.4094368);
+    Grind14 = {};
+    Grind14[1] = 1216;
+    Grind14 = CreateObjective("KillMobsAndLoot",1,10,1,152,TableToList(Grind14));
+    GrindUntilLvl(14,Grind14,true);
+end;
 --if Player.Level >=10 and Player.Level < 14 then
 --    QuestGoToPoint(3034.54,388.2232,0.4094368)
 --    GrindAreaUntilLevel(14);
