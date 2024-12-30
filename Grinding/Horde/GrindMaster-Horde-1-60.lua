@@ -6,6 +6,7 @@ Author = "Lawl edit of Speedy for Alliance";
 --------------End Zone ID List--------------
 --------------Vendor Blacklist--------------
 BlackListSellVendorByName("Kayla Smithe"); --Warlock Vendor PoS that no one cal really sell too
+BlackListSellVendorByName("Kitha"); --Warlock Vendor PoS that no one cal really sell too
 ------------End Vendor Blacklist------------
 
 --------------------------------------------------------------------------------------
