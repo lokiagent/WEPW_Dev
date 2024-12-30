@@ -63,7 +63,8 @@ Tirisfal7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1506, 1
 Durotar7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3101});
 Tirisfal10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1547,1553});
 Durotar10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3099,3125});
-
+Tirisfal13
+Durotar13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3100,3223});
 
 -- Grinding to Level 4
 if Player.Level < 4 then
@@ -96,11 +97,20 @@ if Player.Level >= 4 and Player.Level < 7 then
 end;
 -- Grinding to Level 10
 if Player.Level >= 7 and Player.Level < 10 then
-    Log("Grinding to 7...");
+    Log("Grinding to 10...");
     if GetZoneID() == 1420 then
         GrindUntilLvl(10, Tirisfal10, true, true);
     elseif GetZoneID() == 1411 then
         GrindUntilLvl(10, Durotar10, true, true);
+    end;
+end;
+-- Grinding to Level 13
+if Player.Level >= 10 and Player.Level < 13 then
+    Log("Grinding to 13...");
+    if GetZoneID() == 1420 then
+        GrindUntilLvl(13, Tirisfal13, true, true);
+    elseif GetZoneID() == 1411 then
+        GrindUntilLvl(13, Durotar13, true, true);
     end;
 end;
 
