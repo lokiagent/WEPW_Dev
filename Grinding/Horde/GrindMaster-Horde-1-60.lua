@@ -60,18 +60,22 @@ SetQuestSellAt(2)
 
 -- Setting Grinding Mobs Based on Level
 Tirisfal4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{1501,1502,1890});
-Durotar4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{3098,3124});
+--Durotar4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{3098,3124});
+Durotar4 = GrindAndGather(TableToList{3098,3124},500,TableToFloatArray({-604.5, -4393.5, 38.5}), true)
 Mulgore4 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 999, TableToList{2955});
 Tirisfal7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1506,1507});
-Durotar7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3101});
+--Durotar7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3101});
+Durotar7 = GrindAndGather(TableToList{3101},500,TableToFloatArray({-604.5, -4393.5, 38.5}), true)
 Mulgore7 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{2961,2966});
 Tirisfal10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1547,1553});
-Durotar10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3099,3125});
+--Durotar10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3099,3125});
+Durotar10 = GrindAndGather(TableToList{3099,3125},500,TableToFloatArray({401.85,-4347.332,27.32475}), true)
 Mulgore10 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{2956,2958});
 Tirisfal13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{1536,1537,1662});
+Barrens11 = GrindAndGather(TableToList{3244},500,TableToFloatArray({-262.0276, -2732.77, 91.99313}), true)
 Durotar13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3100,3223});
 Mulgore13 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{2957,2960});
-Barrens16 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3231});
+Barrens16 = CreateObjective("KillMobsAndLoot", 1, 1, 1, 998, TableToList{3254,3415,3244});
 
 -- Grinding to Level 4
 if Player.Level < 4 then
@@ -117,21 +121,15 @@ if Player.Level >= 7 and Player.Level < 10 then
         GrindUntilLvl(10, Mulgore10, true, true);
     end;
 end;
--- Grinding to Level 13
-if Player.Level >= 10 and Player.Level < 13 then
-    Log("Grinding to 13...");
-    if GetZoneID() == 1420 then
-        GrindUntilLvl(13, Tirisfal13, true, true);
-    elseif GetZoneID() == 1411 then
-        GrindUntilLvl(13, Durotar13, true, true);
-    elseif GetZoneID() == 1412 then
-        GrindUntilLvl(13, Mulgore13, true, true);
-    end;
+-- Grinding to Level 12
+Log("Grinding to 13...");
+while Player.Level >= 10 and Player.Level < 12 do
+    DoObjective(Durotar10);
 end;
 -- Grinding to Level 16
-if Player.Level >= 13 and Player.Level < 16 then
+if Player.Level >= 12 and Player.Level < 16 then
     Log("Grinding to 16...");
-    GrindUntilLvl(16, Barrens16, true, true);
+    DoObjective(Barrens11);
 end;
 
 StopQuestProfile();

@@ -9,6 +9,7 @@ BlackListSellVendorByName("Kayla Smithe"); --Warlock Vendor PoS that no one cal 
 BlackListSellVendorByName("Kitha"); --Warlock Vendor PoS that no one cal really sell too
 ------------End Vendor Blacklist------------
 local EnableGathering = true;
+
 --------------------------------------------------------------------------------------
 ---------  Setting Manual Training as Training isn't working for some parts  ---------
 --------------------------------------------------------------------------------------
