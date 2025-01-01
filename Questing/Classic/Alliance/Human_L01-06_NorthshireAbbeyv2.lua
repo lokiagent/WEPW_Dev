@@ -153,7 +153,7 @@ CompleteObjectiveOfQuest(6,1); Log("Complete: [5]Bounty on Garrick Padfoot; Obje
 --Step 3.5: Bad Deku! Bad! No secret training when All Might said quest!
 if Player.Level < 7 then
     Log("Player is under Level 7, Proceeding to Grind at Northshire Abbey");
-    BlackListUnitGUID(103); --Adding Padfoot to the Blacklist so we don't interfere with other's questing
+    --BlackListUnitGUID(103); --Adding Padfoot to the Blacklist so we don't interfere with other's questing
     GrindAreaUntilLevel(7);
 end
 --Step 4: Eurupe's: The Final (Class)Questdown
