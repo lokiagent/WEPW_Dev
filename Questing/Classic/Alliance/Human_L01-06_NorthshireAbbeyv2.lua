@@ -58,6 +58,19 @@ function GoToTrainer(unitName, targetX, targetY, targetZ)
         end; -- IF
     end; -- For Each
 end
+function PreferredVendor()
+    VendorName = "Godric Rothgar"; VendorX = -8899.428; VendorY = -121.2275; VendorZ = 81.85623;
+    QuestGoToPoint(VendorX, VendorY, VendorZ); -- Pathing to get to specified location
+    Units = GetUnitsList();
+    foreach Unit in Units do
+        Log(Unit.Name);
+        if (Unit.Name == VendorName) and (IsUnitValid(Unit)== true) then
+            Log("Found Vendor!");         
+            InteractWithUnit(Unit);
+            SleepPlugin(2000);
+        end; -- IF
+    end; -- For Each
+end
 function Training()
     Log("Training " .. Player.Name)
     UseMacro("Gossip1")
@@ -116,10 +129,11 @@ DoObjective(KillKoboldVermin); Log("Complete: [2]Kobold Camp Cleanup; Objective(
 TurnInQuestUsingDB(33); Log("Turn-in: [2]Wolves Across the Border");
 TurnInQuestUsingDB(7); Log("Turn-in: [2]Kobold Camp Cleanup");
 AcceptQuestUsingDB(15); Log("Accept: [3]Investigate Echo Ridge");
---Step 1.25: Grind to Level 4 so we can train more skills
+--Step 1.25: Grind to Level 4 so we can train more skills & a little selling after
 if Player.Level < 4 then
     Log("Player is under Level 4, Proceeding to Grind at Northshire Abbey");
     GrindAreaUntilLevel(4);
+    PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
 end
 --Step 1.5: Class Quests and Training
 if not HasPlayerFinishedQuest(ClassQuest1ID) then
@@ -141,6 +155,7 @@ DoObjective(KillKoboldLaborers); Log("Complete: [4]Skirmish at Echo Ridge; Objec
 if Player.Level < 6 then
     Log("Player is under Level 6, Proceeding to Grind at Northshire Abbey");
     GrindAreaUntilLevel(6);
+    PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
     GoToTrainer(ClassTrainer, ClassTrainerX, ClassTrainerY, ClassTrainerZ); Log("Go to Trainer: "..ClassTrainer);
     Training(); Log("Training: "..Player.Class);
 end
@@ -155,6 +170,7 @@ if Player.Level < 7 then
     Log("Player is under Level 7, Proceeding to Grind at Northshire Abbey");
     --BlackListUnitGUID(103); --Adding Padfoot to the Blacklist so we don't interfere with other's questing
     GrindAreaUntilLevel(7);
+    PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
 end
 --Step 4: Eurupe's: The Final (Class)Questdown
 TurnInQuestUsingDB(3904); Log("Turn-in: [4]Milly's Harvest");
