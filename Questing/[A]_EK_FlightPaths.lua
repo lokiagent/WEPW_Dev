@@ -8,7 +8,7 @@ local function HandleFlightPath(name, ID)
     FlightMasterX=FlightMasterLOC[0]; FlightMasterY=FlightMasterLOC[1]; FlightMasterZ=FlightMasterLOC[2]);
     coords = { FlightMasterX, FlightMasterY, FlightMasterZ }
     QuestGoToPoint(table.unpack(coords))
-    for _, unit in ipairs(GetUnitsList()) do
+    foreach Unit in Units do
         Log(unit.Name)
         if unit.Name == name and IsUnitValid(unit) then
             Log("Found flight master!")
