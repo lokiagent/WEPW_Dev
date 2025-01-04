@@ -1,38 +1,8 @@
--- Desc: Contains functions for handling flight paths in Eastern Kingdoms
-
--- Function to ensure folder and file structure
-local function EnsureFolderAndFile(functionName)
-    local characterName = GetPlayer.Name()
-    local baseFolder = "CharacterInfo/" .. characterName
-    local subFolder = baseFolder .. "/DiscoveredFlightPaths"
-    local fileName = subFolder .. "/" .. functionName .. ".txt"
-
-    -- Create base folder if it doesn't exist
-    if not DirectoryExists(baseFolder) then
-        CreateDirectory(baseFolder)
-    end
-
-    -- Create subfolder "DiscoveredFlightPaths" if it doesn't exist
-    if not DirectoryExists(subFolder) then
-        CreateDirectory(subFolder)
-    end
-
-    -- Create the file "<FunctionName>.txt" if it doesn't exist
-    if not FileExists(fileName) then
-        local file = io.open(fileName, "w")
-        if file then
-            file:close()
-        end
-    end
-end
-
--- Function to handle flight paths
-local function HandleFlightPath(name, coords)
-    -- Ensure folder and file structure
-    local functionName = debug.getinfo(2, "n").name -- Get the calling function's name
-    EnsureFolderAndFile(functionName)
-
+local function HandleFlightPath(name, ID)
     Log("Starting " .. name .. " flight path function")
+    FlightMaster=name; FlightMasterID=ID; FlightMasterLOC=GetNPCPostionFromDB(FlightMasterID);
+    FlightMasterX=FlightMasterLOC[0]; FlightMasterY=FlightMasterLOC[1]; FlightMasterZ=FlightMasterLOC[2]);
+    coords = { FlightMasterX, FlightMasterY, FlightMasterZ }
     QuestGoToPoint(table.unpack(coords))
     for _, unit in ipairs(GetUnitsList()) do
         Log(unit.Name)
@@ -44,8 +14,6 @@ local function HandleFlightPath(name, coords)
         end
     end
 end
-
--- Function to fly to destinations
 local function FlyToDestination(destination, sleepTime)
     Log("Flying to " .. destination)
     for _ = 1, 3 do
@@ -56,41 +24,85 @@ local function FlyToDestination(destination, sleepTime)
     end
     SleepPlugin(sleepTime or 90000)
 end
-
--- Flight Master Locations
-function WestfallFP()
-    HandleFlightPath("Thor", { -10627.74, 1038.647, 34.12702 })
-end
-
-function StormwindFP()
-    HandleFlightPath("Dungar Longdrink", { -8834.801, 487.8065, 109.6138 })
-end
-
-function RedridgeFP()
-    HandleFlightPath("Ariena Stormfeather", { -9434.632, -2235.667, 69.05429 })
-end
-
-function DarkshireFP()
-    HandleFlightPath("Felicia Maline", { -10513.16, -1259.571, 41.42373 })
-end
-
-function ThoriumFP()
-    HandleFlightPath("Lanie Reed", { -6558.581, -1168.815, 309.8231 })
-end
-
--- Fly to specific destinations
 function FlyToStormwind()
     FlyToDestination("Stormwind")
 end
-
-function FlyToWestfall()
-    FlyToDestination("Sentinel Hill")
+-- Flight Path Functions
+function ArathiHighlandsFP()
+    FlightMaster="Cedrik Prose"; FlightMasterID=2835;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function BlastedLandsFP()
+    FlightMaster="Alexandra Constantine"; FlightMasterID=8609;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function BurningSteppesFP()
+    FlightMaster="Borgus Stoutarm"; FlightMasterID=2299;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function DuskwoodFP()
+    FlightMaster="Felicia Maline"; FlightMasterID=2409;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function EasternPlaguelandsFP()
+    FlightMaster="Khaelyn Steelwing"; FlightMasterID=12617;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function HillsbradFoothillsFP()
+    FlightMaster="Darla Harris"; FlightMasterID=2432;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function HinterlandsFP()
+    FlightMaster="Guthrum Thunderfist"; FlightMasterID=8018;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function IronforgeFP()
+    FlightMaster="Gryth Thurden"; FlightMasterID=1573;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function LochModanFP()
+    FlightMaster="Thorgrum Borrelson"; FlightMasterID=1572;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function RedridgeMountainsFP()
+    FlightMaster="Ariena Stormfeather"; FlightMasterID=931;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function SearingGorgeFP()
+    FlightMaster="Lanie Reed"; FlightMasterID=2941;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function StormwindCityFP()
+    FlightMaster="Dungar Longdrink"; FlightMasterID=352;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function StranglethornValeFP()
+    FlightMaster="Gyll"; FlightMasterID=2859;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function WesternPlaguelandsFP()
+    FlightMaster="Bibilfaz Featherwhistle"; FlightMasterID=12596;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function WestfallFP()
+    FlightMaster="Thor"; FlightMasterID=523;
+    HandleFlightPath(FlightMaster, FlightMasterID);
+end
+function WetlandsFP()
+    FlightMaster="Shellei Brondir"; FlightMasterID=1571;
+    HandleFlightPath(FlightMaster, FlightMasterID);
 end
 
-function FlyToRedridgeMountains()
-    FlyToDestination("Lakeshire")
-end
-
-function FlyToDuskwood()
-    FlyToDestination("Darkshire")
-end
+StormwindCityFP();
+WestfallFP();
+RedridgeMountainsFP();
+DuskwoodFP();
+StranglethornValeFP();
+FlyToStormwind();
+IronforgeFP();
+LochModanFP();
+WetlandsFP();
+ArathiHighlandsFP();
+HinterlandsFP();
+WesternPlaguelandsFP();
+EasternPlaguelandsFP();
