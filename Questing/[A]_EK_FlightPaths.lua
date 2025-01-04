@@ -1,3 +1,7 @@
+--Macros needed:
+--Macro Name: Stormwind
+--Macro Body: /run local n="Stormwind"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+
 local function HandleFlightPath(name, ID)
     Log("Starting " .. name .. " flight path function")
     FlightMaster=name; FlightMasterID=ID; FlightMasterLOC=GetNPCPostionFromDB(FlightMasterID);
@@ -106,3 +110,5 @@ ArathiHighlandsFP();
 HinterlandsFP();
 WesternPlaguelandsFP();
 EasternPlaguelandsFP();
+
+StopQuestProfile();
