@@ -5,6 +5,8 @@ UseDBToSell(true);
 SetQuestRepairAt(30);
 SetQuestSellAt(2);
 Player = GetPlayer();
+BlackListRepairVendorByName("Defias Profiteer");
+BlackListSellVendorByName("Defias Profiteer");
 
 Log("Current Zone ID: "..GetZoneID());
 Log("Current Player Position:"..GetPlayer().Position);
@@ -189,6 +191,8 @@ AcceptQuestUsingDB(9); -- [8] The Killing Fields
 CompleteObjectiveOfQuest(399,1); -- [15] Humble Beginnings
 CompleteObjectiveOfQuest(151, 1); -- [9-12] Handfuls of Oats (8)
 CompleteObjectiveOfQuest(102, 1); -- [9-12] Patrolling Westfall (12)
+CompleteObjectiveOfQuest(12, 1); -- [9] The People's Militia (Part 1)
+CompleteObjectiveOfQuest(12, 2); -- [9] The People's Militia (Part 1)
 
 -------Turning in quests at Sentinel Hill-------
 TurnInQuestUsingDB(12); -- [9] The People's Militia (Part 1)
@@ -227,16 +231,16 @@ if HasPlayerFinishedQuest(143)==false and GetZoneID() == 1436 then
     WestfallFP();
     FlyToRedridgeMountains();
 end;
-CompleteEntireQuest(144); Log("Turning in: [14] Messenger to Westfall");  AcceptQuestUsingDB(145); Log("Accepting: [18] Messenger to Darkshire");
-if HasPlayerFinishedQuest(144)==false and GetZoneID() == 1436 then
-    WestfallFP();
-    FlyToRedridgeMountains();
-end;
 -- Grind Step: To Level 18
 GrindAreaUntilLevel(18);
 if HasPlayerFinishedQuest(145)==false and GetZoneID() == 1453 then
     RedridgeFP();
     FlyToDuskwood();
+end;
+CompleteEntireQuest(144); Log("Turning in: [14] Messenger to Westfall");  AcceptQuestUsingDB(145); Log("Accepting: [18] Messenger to Darkshire");
+if HasPlayerFinishedQuest(144)==false and GetZoneID() == 1436 then
+    WestfallFP();
+    FlyToRedridgeMountains();
 end;
 CompleteEntireQuest(145); Log("Turning in: [18] Messenger to Darkshire"); AcceptQuestUsingDB(146); Log("Accepting: [18] Messenger to Darkshire");
 if HasPlayerFinishedQuest(146)==false and GetZoneID() == 1431 then
