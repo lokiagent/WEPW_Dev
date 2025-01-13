@@ -162,11 +162,19 @@ AcceptQuestUsingDB(153); Log("Accepting: [12]Red Leather Bandanas");
 TurnInQuestUsingDB(109); Log("Turn-in: [12]Report to Gryan Stoutmantle");
 AcceptQuestUsingDB(12); Log("Accepting: [12]The People's Militia");
 AcceptQuestUsingDB(102); Log("Accepting: [14]Patrolling Westfall");
-CompleteObjectiveOfQuest(153,1); Log("Completing Objective of [12]Red Linen Bandanas: Collect 6 Red Leather Bandanas");
+CompleteObjectiveOfQuest(64,1); Log("Completing Objective of [12]The Forgotten Heirloom: Retrieve the pocket watch");
+if ((CanTurnInQuest(153) ~= true) and (HasPlayerFinishedQuest(153) ~= true)) then
+    QuestGoToPoint(-10007.86, 1406.651, 40.75225);
+    CompleteObjectiveOfQuest(153,1); Log("Completing Objective of [12]Red Linen Bandanas: Collect 6 Red Leather Bandanas");
+end
 CompleteObjectiveOfQuest(12,1); Log("Completing Objective of [12]The People's Militia: Defeat 15 Defias Bandits");
+CompleteObjectiveOfQuest(12,2); Log("Completing Objective of [12]The People's Militia: Defeat 15 Defias Bandits");
 CompleteObjectiveOfQuest(22,1); Log("Completing Objective of [12]Goretusk Liver Pie: Collect 8 Goretusk Livers");
 CompleteObjectiveOfQuest(38,1); Log("Completing Objective of [14]Westfall Stew: Gather ingredients");
-CompleteObjectiveOfQuest(64,1); Log("Completing Objective of [12]The Forgotten Heirloom: Retrieve the pocket watch");
+CompleteObjectiveOfQuest(38,2); Log("Completing Objective of [14]Westfall Stew: Gather ingredients");
+CompleteObjectiveOfQuest(38,3); Log("Completing Objective of [14]Westfall Stew: Gather ingredients");
+CompleteObjectiveOfQuest(38,4); Log("Completing Objective of [14]Westfall Stew: Gather ingredients");
+
 CompleteObjectiveOfQuest(102,1); Log("Completing Objective of [14]Patrolling Westfall: Defeat Gnolls");
 TurnInQuestUsingDB(12); Log("Turn-in: [12]The People's Militia");
 AcceptQuestUsingDB(13); Log("Accepting: [14]The People's Militia");
@@ -205,30 +213,46 @@ TurnInQuestUsingDB(22); Log("Turn-in: [12]Goretusk Liver Pie");
 TurnInQuestUsingDB(38); Log("Turn-in: [14]Westfall Stew");
 TurnInQuestUsingDB(102); Log("Turn-in: [14]Patrolling Westfall");
 --Its the Eye of the Grinder its the Thrill of the Fight, gonna shank crabs until Level 19!
-if Player.Level >= 15 and Player.Level < 19 then
-    Log("Current Level: " .. Player.Level .. " Grinding to 19...");
-AddNameToAvoidWhiteList("Sea Crawler")
-    local InRangeSpawns = {}
-    local IDs = {}
-    IDs[1] = 831
-    --Starting Point--
-    local StartingPoint = {}
-    StartingPoint[1] = -9942.369; StartingPoint[2] = 1884.301; StartingPoint[3] = 6.735732
-    StartingFloat = TableToFloatArray(StartingPoint)
-    GrindAndGather(TableToList(IDs),50,StartingFloat)
-end
+-------if Player.Level >= 15 and Player.Level < 19 then
+-------    Log("Current Level: " .. Player.Level .. " Grinding to 19...");
+-------AddNameToAvoidWhiteList("Sea Crawler")
+-------    local InRangeSpawns = {}
+-------    local IDs = {}
+-------    IDs[1] = 831
+-------    --Starting Point--
+-------    local StartingPoint = {}
+-------    StartingPoint[1] = -9942.369; StartingPoint[2] = 1884.301; StartingPoint[3] = 6.735732
+-------    StartingFloat = TableToFloatArray(StartingPoint)
+-------    GrindAndGather(TableToList(IDs),50,StartingFloat)
+-------end
 --
 --Step 3: The Militant People
 CompleteObjectiveOfQuest(13,1); Log("Completing Objective of [14]The People's Militia: Defeat 15 Defias Pillagers and 15 Defias Looters");
+CompleteObjectiveOfQuest(13,2); Log("Completing Objective of [14]The People's Militia: Defeat 15 Defias Pillagers and 15 Defias Looters");
 TurnInQuestUsingDB(13); Log("Turn-in: [14]The People's Militia");
 AcceptQuestUsingDB(14); Log("Accepting: [17]The People's Militia");
 AcceptQuestUsingDB(65); Log("Accepting: [18]The Defias Brotherhood");
 CompleteObjectiveOfQuest(14,1); Log("Completing Objective of [17]The People's Militia: Defeat 15 Defias Highwaymen, 5 Defias Pathstalkers, and 5 Defias Knuckledusters");
+CompleteObjectiveOfQuest(14,2); Log("Completing Objective of [17]The People's Militia: Defeat 15 Defias Highwaymen, 5 Defias Pathstalkers, and 5 Defias Knuckledusters");
+CompleteObjectiveOfQuest(14,3); Log("Completing Objective of [17]The People's Militia: Defeat 15 Defias Highwaymen, 5 Defias Pathstalkers, and 5 Defias Knuckledusters");
 TurnInQuestUsingDB(14); Log("Turn-in: [17]The People's Militia");
 --Step 4: And I would walk 500 miles, and I would walk 500 more
 TurnInQuestUsingDB(65); Log("Turn-in: [18]The Defias Brotherhood");
 AcceptQuestUsingDB(132); Log("Accepting: [18]The Defias Brotherhood");
 TurnInQuestUsingDB(132); Log("Turn-in: [18]The Defias Brotherhood");
+--While in Redridge
+AcceptQuestUsingDB(116); Log("Accepting: [15]Dry Times"); --Need to think on this one......
+--CompleteObjectiveOfQuest(116,1); --(1262)Keg of Thunderbrew, Quest Reward from (117)Thunderbrew, in Westfall (5 Hops)
+--CompleteObjectiveOfQuest(116,2); --(1941)Cask of Merlot, Sold by (277)Roberto Pupellyverbos, in SW
+--CompleteObjectiveOfQuest(116,3); --(1942)Bottle of Moonshine, Sold by (274)Barkeep Hann, in Darkshire Inn
+--CompleteObjectiveOfQuest(116,4); --(1939)Skin of Sweet Rum, Sold by (465)Barkeep Dobbins, In Goldshire Inn
+AcceptQuestUsingDB(129); Log("Accepting: [15]A Free Lunch");
+TurnInQuestUsingDB(129); Log("Turn-in: [15]A Free Lunch");
+AcceptQuestUsingDB(130); Log("Accepting: [15]Visit the Herbalist");
+TurnInQuestUsingDB(130); Log("Turn-in: [15]Visit the Herbalist");
+AcceptQuestUsingDB(131); Log("Accepting: [15]Delivering Daffodils");
+TurnInQuestUsingDB(131); Log("Turn-in: [15]Delivering Daffodils");
+--What the Redridge
 AcceptQuestUsingDB(135); Log("Accepting: [18]The Defias Brotherhood");
 TurnInQuestUsingDB(135); Log("Turn-in: [18]The Defias Brotherhood");
 AcceptQuestUsingDB(141); Log("Accepting: [18]The Defias Brotherhood");
