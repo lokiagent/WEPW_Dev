@@ -4,7 +4,7 @@ UseDBToRepair(true)
 UseDBToSell(true)
 SetQuestRepairAt(30)
 SetQuestSellAt(2)
-IgnoreLowLevelQuests(false)
+IgnoreLowLevelQuests = false
 
 --Varibales--
 Player = GetPlayer();
@@ -14,7 +14,7 @@ Log("Current Player Position:"..GetPlayer().Position);
 --Profession Choices, Off by Default.  Set to True to enable these options.
 TrainHerbalism = false;
 TrainSkinning = false;
-TrainMining = true;
+TrainMining = false;
 TrainFirstAid = false;
 TrainFishing = false;
 TrainCooking = false;
@@ -75,7 +75,9 @@ if GetPlayerClass() == "Mage" then
     ClassTrainer = "Zaldar Wefellt"; ClassTrainerX = -9471.374; ClassTrainerY = 33.34243; ClassTrainerZ = 63.82144;
 end
 if GetPlayerClass() == "Paladin" then
-    ClassTrainer = "Brother Wilhem"; ClassTrainerX = -9468.029; ClassTrainerY = 110.4681; ClassTrainerZ = 57.54885;
+    ClassTrainer = "Brother Wilhelm"; ClassTrainerID=927; TrainerLOC=GetNPCPostionFromDB(ClassTrainerID);
+    ClassTrainerX=TrainerLOC[0]; ClassTrainerY=TrainerLOC[1]; ClassTrainerZ=TrainerLOC[2];
+    --ClassTrainerX = -9468.029; ClassTrainerY = 110.4681; ClassTrainerZ = 57.54885;
 end
 if GetPlayerClass() == "Priest" then
     ClassQuest2ID = 5623; ClassQuest2Name = "[4]In Favor of the Light";
@@ -124,7 +126,7 @@ function PreferredVendor(unitName, VendorX, VendorY, VendorZ)
     foreach Unit in Units do
         Log(Unit.Name);
         if (Unit.Name == VendorName) and (IsUnitValid(Unit)== true) then
-            Log("Found Vendor!");         
+            Log("Found Vendor!"..unitName);         
             InteractWithUnit(Unit);
             SleepPlugin(2000);
         end; -- IF
@@ -160,6 +162,7 @@ function UseHearthstone()
         SleepPlugin(100);
     end
 end
+
 
 --------------------------------------------------------------------------------------
 
@@ -229,6 +232,11 @@ end
 AcceptQuestUsingDB(62); Log("Accepting: [7]The Fargodeep Mine");
 AcceptQuestUsingDB(60); Log("Accepting: [7]Kobold Candles");
 AcceptQuestUsingDB(47); Log("Accepting: [7]Gold Dust Exchange");
+if (IsOnQuest(47) == true and IsOnQuest(85) ~= true) then
+    VendorName = "Corina Steele"; VendorID=54; VendorLOC=GetNPCPostionFromDB(VendorID);
+    VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
+    PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
+end 
 AcceptQuestUsingDB(85); Log("Accepting: [6]Lost Necklace");
 TurnInQuestUsingDB(85); Log("Completing: [6]Lost Necklace");
 AcceptQuestUsingDB(86); Log("Accepting: [6]Pie for Billy");
@@ -257,6 +265,11 @@ AcceptQuestUsingDB(35); Log("Accepting: [10]Further Concerns");
 TurnInQuestUsingDB(62); Log("Completing: [7]The Fargodeep Mine");
 AcceptQuestUsingDB(76); Log("Accepting: [10]The Jasperlode Mine");
 TurnInQuestUsingDB(60); Log("Completing: [7]Kobold Candles");
+if (IsOnQuest(35) == true and IsOnQuest(37) ~= true) then
+    VendorName = "Corina Steele"; VendorID=54; VendorLOC=GetNPCPostionFromDB(VendorID);
+    VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
+    PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
+end 
 AcceptQuestUsingDB(61); Log("Accepting: [7]Shipment to Stormwind");
 ----Step 2: On the Road to Stormwind
 TurnInQuestUsingDB(61); Log("Completing: [7]Shipment to Stormwind");
@@ -269,11 +282,19 @@ TurnInQuestUsingDB(334); Log("Completing: [2]Package for Thurman");
 --Step 3: Some Murloc Genocide with a Good Dose of Taxidermy Afterwards
 TurnInQuestUsingDB(107); Log("Completing: [6]Note to William");
 AcceptQuestUsingDB(112); Log("Accepting: [7]Collecting Kelp");
-if HasPlayerFinishedQuest(107) == true and HasPlayerFinishedQuest(35) ~= true then
+if ((HasPlayerFinishedQuest(112) == true) and (HasPlayerFinishedQuest(112) ~= true)) then
+    CompleteEntireQuest(112); Log("Completing Objective: [7]Collecting Kelp");
+    SleepPlugin(10000);
+end
+if (IsOnQuest(35) == true and IsOnQuest(37) ~= true) then
+    VendorName = "Corina Steele"; VendorID=54; VendorLOC=GetNPCPostionFromDB(VendorID);
+    VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
+    PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
+end 
+if (IsOnQuest(35) == true and IsOnQuest(37) ~= true) then
     GoToTrainer(ClassTrainer, ClassTrainerX, ClassTrainerY, ClassTrainerZ); Log("Go to Trainer: "..ClassTrainer);
     Training(); Log("Training: "..Player.Class);
 end
-CompleteObjectiveOfQuest(112,1); Log("Completing Objective: [7]Collecting Kelp");
 if (HasPlayerFinishedQuest(76) ~= true and CanTurnInQuest(76) ~= true) then
     QuestGoToPoint(-9096.079, -564.0419, 62.24914); -- Scout Through the Jasperlode Mine
 end
@@ -283,20 +304,20 @@ AcceptQuestUsingDB(52); Log("Accepting: [10]Protect the Frontier");
 TurnInQuestUsingDB(37); Log("Completing: [10]Find the Lost Guards");
 AcceptQuestUsingDB(45); Log("Accepting: [10]Discover Rolf's Fate");
 AcceptQuestUsingDB(5545); Log("Accepting: [9]A Bundle of Trouble");
-
-VendorName = "Corina Steele"; VendorID=54; VendorLOC=GetNPCPostionFromDB(VendorID);
-VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
-PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
-
+if (IsOnQuest(5545) == true and IsOnQuest(71) ~= true) then
+    VendorName = "Katie Hunter"; VendorID=384; VendorLOC=GetNPCPostionFromDB(VendorID);
+    VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
+    PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
+end 
 TurnInQuestUsingDB(45); Log("Completing: [10]Discover Rolf's Fate");
 AcceptQuestUsingDB(71); Log("Accepting: [10]Report to Thomas");
 CompleteObjectiveOfQuest(5545,1); Log("Completing Objective: [9]A Bundle of Trouble");
 CompleteEntireQuest(52); Log("Completing: [10]Protect the Frontier:Killing Forest Bears");
-
-VendorName = "Corina Steele"; VendorID=54; VendorLOC=GetNPCPostionFromDB(VendorID);
-VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
-PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
-
+if (IsOnQuest(5545) == true and IsOnQuest(83) ~= true) then
+    VendorName = "Katie Hunter"; VendorID=384; VendorLOC=GetNPCPostionFromDB(VendorID);
+    VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
+    PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
+end 
 TurnInQuestUsingDB(5545); Log("Completing: [9]A Bundle of Trouble");
 AcceptQuestUsingDB(83); Log("Accepting: [9]Red Linen Goods");
 TurnInQuestUsingDB(52); Log("Completing: [10]Protect the Frontier");
@@ -305,26 +326,29 @@ AcceptQuestUsingDB(39); Log("Accepting: [10]Deliver Thomas' Report");
 AcceptQuestUsingDB(109); Log("Accepting: [10]Report to Gyran Stoutmantle");
 CompleteObjectiveOfQuest(88,1); Log("Completing Objective: [9]Princess Must Die!");
 --Step 3: Getting your Drop Quest On
---while (HasItem("Furlbrow's Deed") ~= true and HasItem("Westfall Deed") ~= true and HasPlayerCompletedQuest(184) ~= true) do
---    GrindAndGather(TableToList(DefiasRogueWizard), 100, TableToFloatArray({-9122.16,-1019.184,72.52368}), false); Log("Grinding to get: Westfall Deed");
+--if HasPlayerFinishedQuest(184) ~= true then
+--    if (HasItem("Furlbrow's Deed") ~= true and HasItem("Westfall Deed") ~= true) then
+--        GrindAndGather(TableToList(DefiasRogueWizard), 100, TableToFloatArray({-9122.16,-1019.184,72.52368}), false); Log("Grinding to get: Westfall Deed");
+--    end
 --    if HasItem("Westfall Deed") == true then
 --        UseItem("Westfall Deed");
 --    end
 --end
---while (HasPlayerCompletedQuest(123) ~= true) do
---    GrindAndGather(TableToList(RiverpawGnolls), 200, TableToFloatArray({-8989.872, -764.0568, 74.30352}), false); Log("Grinding to get: Gold Pickup Schedule");
+--if HasPlayerFinishedQuest(123) ~= true then
+--    if (HasItem("Gold Pickup Schedule") ~= true and HasItem("The Collector's Schedule") ~= true) then
+--        GrindAndGather(TableToList(RiverpawGnolls), 200, TableToFloatArray({-8989.872, -764.0568, 74.30352}), false); Log("Grinding to get: Gold Pickup Schedule");
 --    if HasItem("Gold Pickup Schedule") == true then
 --        UseItem("Gold Pickup Schedule");
 --    end
 --end
 --Step 3.5: A litte bit more Grinding
--- Grinding to Level 12
-while Player.Level >= 9 and Player.Level < 12 do
+-- Grinding to Level 11
+if Player.Level >= 9 and Player.Level < 11 then
     Log("Current Level: " .. Player.Level .. " Grinding to 12...");
-    QuestGoToPoint(-8989.872, -764.0568, 74.30352);
-    GrindAreaUntilLevel(12,TableToList{RiverpawGnolls}, true);
+    QuestGoToPoint(-9122.16,-1019.184,72.52368);
+    GrindAreaUntilLevel(11,TableToList{DefiasRogueWizard}, true);
 end
---Step 4: THe Long and Winding Turn in Road
+--Step 4: The Long and Winding Turn in Road
 TurnInQuestUsingDB(83); Log("Completing: [9]Red Linen Goods");
 if HasPlayerFinishedQuest(39) ~= true then
     RedridgeFP(); Log("Discover and Use the Redrdige Mountains FP");
@@ -336,12 +360,16 @@ TurnInQuestUsingDB(123); Log("Completing: [10]The Collector");
 TurnInQuestUsingDB(76); Log("Completing: [10]The Jasperlode Mine");
 AcceptQuestUsingDB(147); Log("Accepting [10]Manhunt");
 AcceptQuestUsingDB(239); Log("Accepting: [10]Westbrook Garrison Needs Help!");
-TurnInQuestUsingDB(112); Log("Completing: [7]Collecting Kelp");
 AcceptQuestUsingDB(114); Log("Accepting: [7]The Escape");
 TurnInQuestUsingDB(114); Log("Completing: [7]The Escape");
 TurnInQuestUsingDB(88); Log("Completing: [9]Princess Must Die!");
 TurnInQuestUsingDB(239); Log("Completing: [10]Westbrook Garrison Needs Help!");
 AcceptQuestUsingDB(11); Log("Accepting: [10]Riverpaw Gnoll Bounty");
+if (IsOnQuest(11) == true and IsOnQuest(64) ~= true) then
+    VendorName = "Corina Steele"; VendorID=54; VendorLOC=GetNPCPostionFromDB(VendorID);
+    VendorX=VendorLOC[0]; VendorY=VendorLOC[1]; VendorZ=VendorLOC[2];
+    PreferredVendor(VendorName, VendorX, VendorY, VendorZ); Log("Vendor: "..VendorName);
+end 
 --Step 5: Its Westfall Time......Sorta
 TurnInQuestUsingDB(184); Log("Completing: [9]Furlbrow's Deed'");
 AcceptQuestUsingDB(64); Log("Accepting: [12]The Forgotten Heirloom");
@@ -373,15 +401,6 @@ CompleteObjectiveOfQuest(147,1); Log("Completing Objective: [10]Manhunt");
 AcceptQuestUsingDB(46); Log("Accepting: [10]Bounty On Murlocs");
 CompleteObjectiveOfQuest(46,1); Log("Completing Objective: [10]Bounty On Murlocs");
 TurnInQuestUsingDB(46); Log("Completing: [10]Bounty On Murlocs");
---while (CanTurnInQuest(11) ~= true) do
-function CustomOverRide()
-    if CanTurnInQuest(11) ~= true then
-        return true; -- We carry on with the Grind And Gather
-    end;
-    return false; -- We stop the grind and Gather !
-end;
-GrindAndGather(TableToList(RiverpawGnolls),200,TableToFloatArray({-8989.872, -764.0568, 74.30352}),false,"CustomOverRide"); Log("Completing Objective: [10]Riverpaw Gnoll Bounty");
---end
 TurnInQuestUsingDB(147); Log("Completing: [10]Manhunt");
 TurnInQuestUsingDB(11); Log("Completing: [10]Riverpar Gnoll Bounty");
 TurnInQuestUsingDB(6285); Log("Completing: [10]Return to Lewis");

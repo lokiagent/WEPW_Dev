@@ -71,6 +71,19 @@ function PreferredVendor()
         end; -- IF
     end; -- For Each
 end
+function SetHearthstone(unitName, targetX, targetY, targetZ)
+    QuestGoToPoint(targetX, targetY, targetZ); -- Pathing to get to specified location
+    Units = GetUnitsList();
+    foreach Unit in Units do
+        Log(Unit.Name);
+        if (Unit.Name == unitName) and (IsUnitValid(Unit)== true) then
+            Log("Found "..Player.Class.. " Innkeeper!");         
+            InteractWithUnit(Unit);
+            SleepPlugin(2000);
+            UseMacro("Gossip1");
+        end; -- IF
+    end; -- For Each
+end
 function Training()
     Log("Training " .. Player.Name)
     UseMacro("Gossip1")
@@ -88,6 +101,7 @@ function UseHearthstone()
         SleepPlugin(100);
     end
 end
+
 --------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------
@@ -115,7 +129,7 @@ KillKoboldLaborers = CreateObjective("KillMobsAndLoot",1,12,1,21,TableToList(Kob
 --Step 0: Initial Grind
 if Player.Level < 3 then
     Log("Player is under Level 3, Proceeding to Grind at Northshire Abbey");
-    GrindAreaUntilLevel(3);
+    GrindAreaUntilLevel(3,{299,6},true);
 end
 --Step 1: A Noob's First Quests
 AcceptQuestUsingDB(783); Log("Accept: [1]A Threat Within");
@@ -150,6 +164,7 @@ CompleteObjectiveOfQuest(18,1); Log("Complete: [4]Brotherhood of Thieves; Object
 TurnInQuestUsingDB(18); Log("Turn-in: [4]]Brotherhood of Thieves");
 AcceptQuestUsingDB(6); Log("Accept: [5]Bounty on Garrick Padfoot");
 AcceptQuestUsingDB(3903); Log("Accept: [4]Milly Osworth");
+-----Add Vendor Step here
 DoObjective(KillKoboldLaborers); Log("Complete: [4]Skirmish at Echo Ridge; Objective(s): Skirmish at Echo Ridge");
 --Step 2.5: So you think you're Rocky Balboa? Adrian gonna make you train harder
 if Player.Level < 6 then
@@ -169,7 +184,7 @@ CompleteObjectiveOfQuest(6,1); Log("Complete: [5]Bounty on Garrick Padfoot; Obje
 if Player.Level < 7 then
     Log("Player is under Level 7, Proceeding to Grind at Northshire Abbey");
     --BlackListUnitGUID(103); --Adding Padfoot to the Blacklist so we don't interfere with other's questing
-    GrindAreaUntilLevel(7);
+    GrindAreaUntilLevel(7,TableToList{38},true);
     PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
 end
 --Step 4: Eurupe's: The Final (Class)Questdown
@@ -185,6 +200,7 @@ end
 --Step 5: Wear your sweats Little Mac, we're going to Goldshire and Doc Louis is riding his bike to make sure we get there.
 AcceptQuestUsingDB(2158); Log("Accept: [5]Rest and Relaxation");
 TurnInQuestUsingDB(54); Log("Turn-in: [5]Report to Goldshire");
+AcceptQuestUsingDB(62); Log("Accept: [7]The Jasperlode Mine");
 TurnInQuestUsingDB(2158); Log("Turn-in: [5]Rest and Relaxation");
 
 --QED Northshire Abbey 
