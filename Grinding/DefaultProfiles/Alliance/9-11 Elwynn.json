@@ -1,0 +1,63 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 10000,
+    "GatherWhiteList": "Silverleaf,Peacebloom,Earthroot",
+    "CombatWhiteList": "Forest Spider,Young Forest Bear,Rockhide Boar",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -9718.971,
+        18.4523449,
+        39.9227028
+      ],
+      [
+        -9877.541,
+        -45.1468925,
+        27.6734486
+      ],
+      [
+        -9872.026,
+        -168.8041,
+        33.5244
+      ],
+      [
+        -9791.534,
+        -256.166626,
+        40.9824371
+      ],
+      [
+        -9784.844,
+        -375.47702,
+        53.63764
+      ],
+      [
+        -9695.277,
+        -538.238647,
+        49.8374939
+      ],
+      [
+        -9719.071,
+        -706.650757,
+        43.79933
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -9457.644,
+      "Y": 99.68837,
+      "Z": 58.3439
+    },
+    "VendorName": "Kurran Steele"
+  }
+]

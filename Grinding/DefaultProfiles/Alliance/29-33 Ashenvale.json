@@ -1,0 +1,63 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Elder Shadowhorn Stag,Withered Ancient,Crazed Ancient,Ghostpaw Alpha",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        2997.79443,
+        -1836.38525,
+        168.863464
+      ],
+      [
+        3007.45435,
+        -1751.73669,
+        171.337387
+      ],
+      [
+        3087.21118,
+        -1702.34875,
+        171.581329
+      ],
+      [
+        3112.81348,
+        -1492.20374,
+        193.745819
+      ],
+      [
+        3344.01343,
+        -1487.98254,
+        166.0488
+      ],
+      [
+        3370.15283,
+        -1608.82532,
+        167.7121
+      ],
+      [
+        3203.077,
+        -1777.18555,
+        178.67453
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": 2672.30786,
+      "Y": -363.60434,
+      "Z": 110.728493
+    },
+    "VendorName": "Xai'ander"
+  }
+]

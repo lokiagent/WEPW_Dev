@@ -1,0 +1,59 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Elder Ashenvale Bear,Wildthorn Venomspitter",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [
+      [
+        2495.63477,
+        -961.8523,
+        130.832611
+      ]
+    ],
+    "BlackListCount": 1,
+    "Bones": [
+      [
+        2597.852,
+        -1957.74927,
+        151.608963
+      ],
+      [
+        2416.34253,
+        -2019.37976,
+        136.5968
+      ],
+      [
+        2295.76465,
+        -2131.3125,
+        111.514992
+      ],
+      [
+        2281.19067,
+        -2221.46436,
+        108.578735
+      ],
+      [
+        2713.8064,
+        -2512.51685,
+        181.516785
+      ]
+    ],
+    "BoneCount": 5,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": 2672.30786,
+      "Y": -363.60434,
+      "Z": 110.728111
+    },
+    "VendorName": "Xai'ander"
+  }
+]

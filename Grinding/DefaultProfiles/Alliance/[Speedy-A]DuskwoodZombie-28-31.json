@@ -1,0 +1,72 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 20,
+    "GatherWhiteList": "Solid Chest",
+    "CombatWhiteList": "Fetid Corpse",
+    "CombatRadius": 50,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -10310.9658,
+        -1193.64807,
+        28.2602634
+      ],
+      [
+        -10297.9688,
+        -1250.81372,
+        36.74125
+      ],
+      [
+        -10287.125,
+        -1311.65808,
+        48.126812
+      ],
+      [
+        -10363.1973,
+        -1307.42932,
+        41.9903145
+      ],
+      [
+        -10402.79,
+        -1246.51025,
+        42.6013031
+      ]
+    ],
+    "BoneCount": 5,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Morg Gnarltree",
+    "RepairAt": 20,
+    "RepairVendorVec": {
+      "X": -10590.5215,
+      "Y": -1155.92932,
+      "Z": 30.0601768
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Morg Gnarltree",
+    "SellVendorVec": {
+      "X": -10590.5215,
+      "Y": -1155.92932,
+      "Z": 30.0601768
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

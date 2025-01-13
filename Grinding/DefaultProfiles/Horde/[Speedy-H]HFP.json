@@ -1,0 +1,112 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 500,
+    "GatherWhiteList": "Dreamfoil,Dreaming Glory,Felweed,Fel Iron Deposit,Golden Sansam",
+    "CombatWhiteList": "Unyielding Footman,Unyielding Knight,Unyielding Sorcerer,Lieutenant Commander Thalvos,Arch Mage Xintor,Deranged Helboar",
+    "CombatRadius": 50,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -1144.19287,
+        2700.86255,
+        -2.90008569
+      ],
+      [
+        -1128.516,
+        2597.2644,
+        29.1187878
+      ],
+      [
+        -1218.61414,
+        2529.79761,
+        43.7107735
+      ],
+      [
+        -1226.02368,
+        2624.40112,
+        16.7418423
+      ],
+      [
+        -1298.63525,
+        2696.21021,
+        -7.780588
+      ],
+      [
+        -1366.43042,
+        2690.68823,
+        -17.6323929
+      ],
+      [
+        -1419.30261,
+        2748.83569,
+        -41.0945778
+      ],
+      [
+        -1473.32581,
+        2706.99658,
+        -48.45471
+      ],
+      [
+        -1408.27686,
+        2813.02075,
+        -52.3288269
+      ],
+      [
+        -1257.51941,
+        2798.52319,
+        -23.10753
+      ],
+      [
+        -1258.388,
+        2869.66382,
+        -9.024161
+      ],
+      [
+        -1188.10693,
+        2775.97144,
+        -19.55941
+      ],
+      [
+        -1207.79773,
+        2720.58374,
+        -8.198897
+      ]
+    ],
+    "BoneCount": 13,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Hagash the Blind",
+    "RepairAt": 20,
+    "RepairVendorVec": {
+      "X": -1329.01392,
+      "Y": 2397.58447,
+      "Z": 89.07535
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Hagash the Blind",
+    "SellVendorVec": {
+      "X": -1329.01392,
+      "Y": 2397.58447,
+      "Z": 89.07535
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

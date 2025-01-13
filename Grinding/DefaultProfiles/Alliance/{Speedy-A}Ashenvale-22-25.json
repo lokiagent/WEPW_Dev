@@ -1,0 +1,82 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 500,
+    "GatherWhiteList": "Kingsblood,Bruiseweed,Briarthorn",
+    "CombatWhiteList": "Thistlefur Avenger,Thistlefur Shaman,Ashenvale Bear,Wildthorn Stalker",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        2941.5896,
+        -98.31214,
+        97.08003
+      ],
+      [
+        3003.10962,
+        -73.4369354,
+        99.58021
+      ],
+      [
+        3080.59229,
+        -55.9052162,
+        98.56137
+      ],
+      [
+        3146.829,
+        -125.558762,
+        100.939857
+      ],
+      [
+        3206.964,
+        -233.58139,
+        117.509285
+      ],
+      [
+        3131.08545,
+        -237.372726,
+        114.227318
+      ],
+      [
+        3036.32666,
+        -163.024612,
+        101.568939
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Aeolynn",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 2769.50122,
+      "Y": -288.052032,
+      "Z": 111.108833
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Aeolynn",
+    "SellVendorVec": {
+      "X": 2769.50122,
+      "Y": -288.052032,
+      "Z": 111.108833
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

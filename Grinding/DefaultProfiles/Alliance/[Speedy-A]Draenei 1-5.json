@@ -1,0 +1,62 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Volatile Mutation,Vale Moth,Mutated Root Lasher",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -4192.31543,
+        -13619.0361,
+        54.3517952
+      ],
+      [
+        -4237.725,
+        -13544.8008,
+        48.2004
+      ],
+      [
+        -4143.693,
+        -13544.8877,
+        51.31459
+      ]
+    ],
+    "BoneCount": 3,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Mura",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -4176.11963,
+      "Y": -13723.6426,
+      "Z": 74.42999
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Mura",
+    "SellVendorVec": {
+      "X": -4176.11963,
+      "Y": -13723.6426,
+      "Z": 74.42999
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Kobold Vermin,Kobold Worker",
+    "CombatRadius": 59,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -8760.097,
+        -128.642792,
+        83.24798
+      ],
+      [
+        -8773.336,
+        -162.474442,
+        82.07705
+      ]
+    ],
+    "BoneCount": 2,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Godric Rothgar",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -8898.231,
+      "Y": -119.837891,
+      "Z": 81.83277
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Godric Rothgar",
+    "SellVendorVec": {
+      "X": -8898.231,
+      "Y": -119.837891,
+      "Z": 81.83277
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

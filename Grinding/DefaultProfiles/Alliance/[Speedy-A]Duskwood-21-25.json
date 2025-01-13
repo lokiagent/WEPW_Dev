@@ -1,0 +1,107 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 200,
+    "GatherWhiteList": "Copper Vein,Tin Vein,Silver Vein,Solid Chest",
+    "CombatWhiteList": "Starving Dire Wolf,Rabid Dire Wolf,Green Recluse,Pygmy Venom Web Spider,Venom Web Spider",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -10047.0879,
+        -259.787476,
+        28.21192
+      ],
+      [
+        -10104.0537,
+        -308.357544,
+        32.46751
+      ],
+      [
+        -10049.416,
+        -384.3638,
+        30.13017
+      ],
+      [
+        -10063.8486,
+        -473.0626,
+        53.4715
+      ],
+      [
+        -10074.3516,
+        -626.5684,
+        48.1599236
+      ],
+      [
+        -9989.345,
+        -677.8812,
+        34.0649757
+      ],
+      [
+        -10052.6846,
+        -752.704956,
+        35.92715
+      ],
+      [
+        -10081.5635,
+        -812.498962,
+        35.7536354
+      ],
+      [
+        -10030.7178,
+        -888.1448,
+        31.4460888
+      ],
+      [
+        -10029.1631,
+        -987.819153,
+        32.78765
+      ],
+      [
+        -10095.415,
+        -1055.45337,
+        31.85624
+      ],
+      [
+        -10205.0732,
+        -1022.05115,
+        29.6072712
+      ]
+    ],
+    "BoneCount": 12,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Avette Fellwood",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -10517.1553,
+      "Y": -1138.52856,
+      "Z": 26.28614
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Avette Fellwood",
+    "SellVendorVec": {
+      "X": -10517.1553,
+      "Y": -1138.52856,
+      "Z": 26.28614
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

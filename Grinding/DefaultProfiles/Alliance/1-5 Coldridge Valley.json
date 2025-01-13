@@ -1,0 +1,53 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Ragged Young Wolf,Rockjaw Trogg,Burly Rockjaw Trogg",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -6278.686,
+        344.192322,
+        377.3421
+      ],
+      [
+        -6313.97852,
+        295.963074,
+        379.619446
+      ],
+      [
+        -6360.741,
+        300.730316,
+        381.895844
+      ],
+      [
+        -6377.872,
+        345.655243,
+        386.521973
+      ],
+      [
+        -6349.21338,
+        397.064056,
+        377.428284
+      ]
+    ],
+    "BoneCount": 5,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -6226.39453,
+      "Y": 320.238281,
+      "Z": 383.116821
+    },
+    "VendorName": "Adlin Pridedrift"
+  }
+]

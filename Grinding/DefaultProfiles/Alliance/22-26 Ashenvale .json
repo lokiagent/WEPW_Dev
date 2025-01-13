@@ -1,0 +1,79 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Ashenvale Bear,Shadowhorn Stag",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [
+      [
+        2495.81519,
+        -961.7557,
+        130.84404
+      ],
+      [
+        2651.39966,
+        -1486.421,
+        193.570923
+      ]
+    ],
+    "BlackListCount": 2,
+    "Bones": [
+      [
+        2519.75781,
+        -1611.91675,
+        144.92482
+      ],
+      [
+        2531.62,
+        -1500.70288,
+        159.713272
+      ],
+      [
+        2721.6416,
+        -1467.775,
+        198.376968
+      ],
+      [
+        2647.8252,
+        -1420.13171,
+        184.106308
+      ],
+      [
+        2697.8938,
+        -1239.94141,
+        163.62236
+      ],
+      [
+        2916.79126,
+        -1231.46753,
+        187.139725
+      ],
+      [
+        2967.78735,
+        -1298.97192,
+        197.96199
+      ],
+      [
+        2556.651,
+        -1213.525,
+        139.428574
+      ]
+    ],
+    "BoneCount": 8,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": 2672.30786,
+      "Y": -363.60434,
+      "Z": 110.728447
+    },
+    "VendorName": "Xai'ander"
+  }
+]

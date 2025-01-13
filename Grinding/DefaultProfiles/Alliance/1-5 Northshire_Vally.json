@@ -1,0 +1,43 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Young Wolf",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -8794.762,
+        -113.196365,
+        83.30143
+      ],
+      [
+        -8830.049,
+        -59.4713249,
+        87.61044
+      ],
+      [
+        -8914.982,
+        -68.71607,
+        87.57607
+      ]
+    ],
+    "BoneCount": 3,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -8898.231,
+      "Y": -119.837891,
+      "Z": 81.83276
+    },
+    "VendorName": "Godric Rothgar"
+  }
+]

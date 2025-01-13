@@ -1,0 +1,74 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Ridge Huntress,Buzzard,Feral Crag Coyote",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [
+      [
+        -6832.382,
+        -3620.20313,
+        248.461166
+      ],
+      [
+        -6856.71631,
+        -3623.86475,
+        248.456345
+      ]
+    ],
+    "BlackListCount": 2,
+    "Bones": [
+      [
+        -6760.149,
+        -3253.95361,
+        240.744476
+      ],
+      [
+        -6737.859,
+        -3417.28784,
+        241.666748
+      ],
+      [
+        -6689.037,
+        -3623.59766,
+        241.9743
+      ],
+      [
+        -6969.43262,
+        -3658.10278,
+        244.797989
+      ],
+      [
+        -7113.031,
+        -3446.42773,
+        241.666611
+      ],
+      [
+        -7000.752,
+        -3470.875,
+        241.668228
+      ],
+      [
+        -6901.527,
+        -3393.211,
+        243.274445
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -6760.187,
+      "Y": -3135.5542,
+      "Z": 241.165543
+    },
+    "VendorName": "Jazzrik"
+  }
+]

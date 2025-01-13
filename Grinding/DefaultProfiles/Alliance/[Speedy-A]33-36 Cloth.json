@@ -1,0 +1,100 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 200,
+    "GatherWhiteList": "Solid Chest",
+    "CombatWhiteList": "Witherbark Shadowcaster,Imp Minion,Boulderfist Ogre,Witherbark Troll",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "Bones": [
+      [
+        -1329.36755,
+        -2149.073,
+        63.1657066
+      ],
+      [
+        -1305.96521,
+        -2054.106,
+        59.8791847
+      ],
+      [
+        -1263.33313,
+        -1991.983,
+        68.719
+      ],
+      [
+        -1173.09473,
+        -1971.62793,
+        64.89837
+      ],
+      [
+        -1123.989,
+        -2028.1554,
+        62.4569855
+      ],
+      [
+        -1098.71838,
+        -2085.61719,
+        52.6834869
+      ],
+      [
+        -1131.05322,
+        -2166.82153,
+        54.50937
+      ],
+      [
+        -1166.07056,
+        -2136.06641,
+        62.41356
+      ],
+      [
+        -1215.38574,
+        -2145.94946,
+        72.59675
+      ],
+      [
+        -1183.296,
+        -2207.00562,
+        55.71703
+      ],
+      [
+        -1250.72864,
+        -2198.9397,
+        57.4325638
+      ]
+    ],
+    "BoneCount": 11,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Jannos Ironwill",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -1278.57263,
+      "Y": -2521.99878,
+      "Z": 21.37471
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Jannos Ironwill",
+    "SellVendorVec": {
+      "X": -1278.57263,
+      "Y": -2521.99878,
+      "Z": 21.37471
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

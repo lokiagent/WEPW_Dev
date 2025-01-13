@@ -1,0 +1,87 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 1000,
+    "GatherWhiteList": "Mithril Deposit,Dark Iron Deposit,Truesilver Deposit,Small Thorium Vein,Rich Thorium Vein,Solid Chest",
+    "CombatWhiteList": "Black Wyrmkin,Black Dragonspawn,Black Drake",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -8188.48145,
+        -2979.87427,
+        137.3074
+      ],
+      [
+        -8049.36768,
+        -2954.38086,
+        134.896545
+      ],
+      [
+        -7941.13867,
+        -2934.94238,
+        133.32341
+      ],
+      [
+        -7818.951,
+        -2883.006,
+        133.504883
+      ],
+      [
+        -7742.76172,
+        -2938.29736,
+        132.6764
+      ],
+      [
+        -7731.361,
+        -2838.90161,
+        136.014725
+      ],
+      [
+        -7632.69,
+        -2823.71045,
+        133.453613
+      ],
+      [
+        -7574.533,
+        -2685.4458,
+        134.525146
+      ]
+    ],
+    "BoneCount": 8,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Felder Stover",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -8366.361,
+      "Y": -2762.50781,
+      "Z": 187.534073
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Felder Stover",
+    "SellVendorVec": {
+      "X": -8366.361,
+      "Y": -2762.50781,
+      "Z": 187.534073
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

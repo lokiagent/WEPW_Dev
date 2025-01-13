@@ -1,0 +1,102 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Forest Lurker,Elder Black Bear,Stonesplinter Scout,Stonesplinter Trogg,Mountain Boar",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -5398.65332,
+        -2843.23926,
+        351.524658
+      ],
+      [
+        -5519.0376,
+        -2752.75513,
+        363.730469
+      ],
+      [
+        -5434.8374,
+        -2748.00659,
+        369.4312
+      ],
+      [
+        -5330.91553,
+        -2773.815,
+        352.544281
+      ],
+      [
+        -5250.994,
+        -2753.99463,
+        349.4059
+      ],
+      [
+        -5182.182,
+        -2754.65771,
+        338.397064
+      ],
+      [
+        -5089.18555,
+        -2784.17285,
+        327.4306
+      ],
+      [
+        -5096.024,
+        -2892.87231,
+        326.157532
+      ],
+      [
+        -5098.58643,
+        -2961.689,
+        335.4098
+      ],
+      [
+        -5163.86572,
+        -3027.30127,
+        330.377869
+      ],
+      [
+        -5183.707,
+        -2942.64185,
+        338.25354
+      ]
+    ],
+    "BoneCount": 11,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Morhan Coppertongue",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -5343.68,
+      "Y": -2932.13428,
+      "Z": 324.36084
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Morhan Coppertongue",
+    "SellVendorVec": {
+      "X": -5343.68,
+      "Y": -2932.13428,
+      "Z": 324.36084
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

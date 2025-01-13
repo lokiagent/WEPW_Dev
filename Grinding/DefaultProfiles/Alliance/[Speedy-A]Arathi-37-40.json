@@ -1,0 +1,92 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 10000,
+    "GatherWhiteList": "Mithril Deposit,Iron Deposit,Tin Vein,Gold Vein,Silver Vein",
+    "CombatWhiteList": "Giant Plains Creeper,Highland Fleshstalker,Mesa Buzzard",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -1656.42969,
+        -2774.63916,
+        45.0831032
+      ],
+      [
+        -1714.79834,
+        -2662.20142,
+        43.1980057
+      ],
+      [
+        -1955.22119,
+        -2504.27881,
+        71.95097
+      ],
+      [
+        -2077.302,
+        -2645.343,
+        79.58303
+      ],
+      [
+        -1867.536,
+        -2668.31885,
+        54.6006279
+      ],
+      [
+        -1753.91833,
+        -2799.754,
+        47.4360771
+      ],
+      [
+        -1684.5564,
+        -2900.732,
+        34.7528038
+      ],
+      [
+        -1564.3634,
+        -2916.39966,
+        23.1039562
+      ],
+      [
+        -1467.34558,
+        -2769.805,
+        45.5645676
+      ]
+    ],
+    "BoneCount": 9,
+    "RepairAtVendor": true,
+    "RepairVendorName": null,
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": null,
+    "SellVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UseSellVendor": false,
+    "PurchaseAmount": 0,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 500,
+    "GatherWhiteList": "Silverleaf,Peacebloom",
+    "CombatWhiteList": "Nightsaber Stalker,Webwood Venomfang",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        9412.318,
+        1425.571,
+        1290.076
+      ],
+      [
+        9420.877,
+        1500.34644,
+        1286.87927
+      ],
+      [
+        9369.624,
+        1646.13489,
+        1293.98279
+      ],
+      [
+        9302.398,
+        1551.192,
+        1280.58643
+      ],
+      [
+        9252.388,
+        1509.61,
+        1294.812
+      ],
+      [
+        9197.157,
+        1512.71533,
+        1310.775
+      ],
+      [
+        9261.85,
+        1418.87585,
+        1292.87573
+      ],
+      [
+        9313.499,
+        1483.50745,
+        1278.16321
+      ]
+    ],
+    "BoneCount": 8,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Brannol Eaglemoon",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 9786.353,
+      "Y": 957.0792,
+      "Z": 1308.77991
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Brannol Eaglemoon",
+    "SellVendorVec": {
+      "X": 9786.353,
+      "Y": 957.0792,
+      "Z": 1308.77991
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

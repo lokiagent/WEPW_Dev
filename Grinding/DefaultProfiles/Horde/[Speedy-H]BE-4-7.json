@@ -1,0 +1,92 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Feral Tender,Tender,Springpaw Lynx",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        10358.6318,
+        -6091.38965,
+        22.137413
+      ],
+      [
+        10382.9268,
+        -6045.338,
+        26.849617
+      ],
+      [
+        10398.8555,
+        -5976.04639,
+        39.8445473
+      ],
+      [
+        10309.6611,
+        -5978.58936,
+        41.5237236
+      ],
+      [
+        10247.5391,
+        -6053.809,
+        22.5599442
+      ],
+      [
+        10201.5273,
+        -6122.617,
+        17.5759182
+      ],
+      [
+        10163.16,
+        -6212.071,
+        18.5021839
+      ],
+      [
+        10258.6289,
+        -6198.22656,
+        20.6999111
+      ],
+      [
+        10299.9443,
+        -6111.27441,
+        22.3527966
+      ]
+    ],
+    "BoneCount": 9,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Jainthess Thelryn",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 10416.7891,
+      "Y": -6316.666,
+      "Z": 35.57405
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Jainthess Thelryn",
+    "SellVendorVec": {
+      "X": 10416.7891,
+      "Y": -6316.666,
+      "Z": 35.57405
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

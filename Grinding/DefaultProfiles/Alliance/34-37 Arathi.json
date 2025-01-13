@@ -1,0 +1,63 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Boulderfist Ogre,Witherbark Troll",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -1302.25842,
+        -2180.30371,
+        62.76786
+      ],
+      [
+        -1294.14172,
+        -2079.03052,
+        61.5762062
+      ],
+      [
+        -1241.30542,
+        -1985.11548,
+        67.5407
+      ],
+      [
+        -1156.62073,
+        -1999.72156,
+        61.69026
+      ],
+      [
+        -1078.73218,
+        -2094.98047,
+        52.9179649
+      ],
+      [
+        -1184.07849,
+        -2182.66846,
+        55.4998322
+      ],
+      [
+        -1288.05945,
+        -2166.46338,
+        60.1946831
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -1278.57263,
+      "Y": -2521.99878,
+      "Z": 21.37443
+    },
+    "VendorName": "Jannos Ironwill"
+  }
+]

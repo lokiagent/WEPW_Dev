@@ -1,0 +1,63 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Searing Infernal,Felguard,Mannoroc Lasher",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        2039.80457,
+        -2927.80371,
+        108.259682
+      ],
+      [
+        2190.27881,
+        -2928.59058,
+        120.627
+      ],
+      [
+        2127.858,
+        -3112.11157,
+        107.53186
+      ],
+      [
+        2048.64429,
+        -3153.873,
+        101.151588
+      ],
+      [
+        1976.01624,
+        -3188.33569,
+        100.020004
+      ],
+      [
+        1928.27429,
+        -3078.014,
+        106.355659
+      ],
+      [
+        1940.7113,
+        -2967.93164,
+        99.94793
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": 2672.30786,
+      "Y": -363.60434,
+      "Z": 110.728493
+    },
+    "VendorName": "Xai'ander"
+  }
+]

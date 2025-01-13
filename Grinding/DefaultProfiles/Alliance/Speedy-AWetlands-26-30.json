@@ -1,0 +1,108 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 50,
+    "GatherWhiteList": "Wild Steelbloom,Bruiseweed,Mageroyal",
+    "CombatWhiteList": "Mottled Scytheclaw,Mottled Razormaw",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [
+      [
+        -3426.261,
+        -1760.61646,
+        29.9878616
+      ],
+      [
+        -3442.13,
+        -1756.64978,
+        26.4935055
+      ],
+      [
+        -3432.88965,
+        -1755.67517,
+        28.5365181
+      ],
+      [
+        -3440.82178,
+        -1750.73853,
+        33.2873077
+      ],
+      [
+        -3459.35449,
+        -1758.21082,
+        23.6740971
+      ],
+      [
+        -3452.913,
+        -1754.45764,
+        26.39436
+      ]
+    ],
+    "BlackListCount": 6,
+    "Bones": [
+      [
+        -3347.96533,
+        -1815.26221,
+        24.9865627
+      ],
+      [
+        -3441.584,
+        -1754.44836,
+        28.9846325
+      ],
+      [
+        -3516.887,
+        -1753.33557,
+        25.10028
+      ],
+      [
+        -3524.58887,
+        -1848.09851,
+        25.20915
+      ],
+      [
+        -3452.19,
+        -1853.3634,
+        25.0163231
+      ],
+      [
+        -3366.768,
+        -1872.75171,
+        26.5311451
+      ]
+    ],
+    "BoneCount": 6,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Edwina Monzor",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -3754.89575,
+      "Y": -848.928955,
+      "Z": 9.944565
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Edwina Monzor",
+    "SellVendorVec": {
+      "X": -3754.89575,
+      "Y": -848.928955,
+      "Z": 9.944565
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

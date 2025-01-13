@@ -1,0 +1,38 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Sand Crawler",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -9647.436,
+        1253.24475,
+        5.45165443
+      ],
+      [
+        -9633.488,
+        1378.94568,
+        8.619003
+      ]
+    ],
+    "BoneCount": 2,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -10658.5264,
+      "Y": 996.851135,
+      "Z": 32.8745155
+    },
+    "VendorName": "William MacGregor"
+  }
+]

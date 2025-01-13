@@ -1,0 +1,67 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Crag Boar,Young Black Bear,Snow Tracker Wolf,Winter Wolf,Large Crag Boar",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -5518.437,
+        -454.698517,
+        406.091766
+      ],
+      [
+        -5476.227,
+        -413.414459,
+        400.80484
+      ],
+      [
+        -5429.805,
+        -565.621765,
+        397.116455
+      ],
+      [
+        -5516.52539,
+        -592.4337,
+        404.5842
+      ]
+    ],
+    "BoneCount": 4,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Thrawn Boltar",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -5568.99072,
+      "Y": -429.1144,
+      "Z": 397.32547
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Thrawn Boltar",
+    "SellVendorVec": {
+      "X": -5568.99072,
+      "Y": -429.1144,
+      "Z": 397.32547
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

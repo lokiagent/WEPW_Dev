@@ -1,0 +1,102 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 2000,
+    "GatherWhiteList": "Truesilver Deposit,Iron Deposit,Mithril Deposit,Gold Vein",
+    "CombatWhiteList": "Dustbelcher Wyrmhunter,Dustbelcher Shaman,Dustbelcher Mauler,Greater Rock Elemental",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -7152.312,
+        -2385.03345,
+        240.5156
+      ],
+      [
+        -7253.6333,
+        -2505.11084,
+        282.7869
+      ],
+      [
+        -7368.047,
+        -2455.41577,
+        308.9699
+      ],
+      [
+        -7262.2207,
+        -2406.89819,
+        263.979553
+      ],
+      [
+        -7211.929,
+        -2346.05518,
+        246.323135
+      ],
+      [
+        -7191.749,
+        -2258.123,
+        269.0718
+      ],
+      [
+        -7266.62,
+        -2215.37646,
+        284.411957
+      ],
+      [
+        -7239.268,
+        -2142.70874,
+        299.299957
+      ],
+      [
+        -7174.661,
+        -2184.58032,
+        315.327972
+      ],
+      [
+        -7074.749,
+        -2272.36426,
+        267.588928
+      ],
+      [
+        -7108.751,
+        -2329.57129,
+        243.232056
+      ]
+    ],
+    "BoneCount": 11,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Jazzrik",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -6760.187,
+      "Y": -3135.5542,
+      "Z": 241.164413
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Jazzrik",
+    "SellVendorVec": {
+      "X": -6760.187,
+      "Y": -3135.5542,
+      "Z": 241.164413
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

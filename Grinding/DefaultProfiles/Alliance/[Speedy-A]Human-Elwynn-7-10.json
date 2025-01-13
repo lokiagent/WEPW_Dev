@@ -1,0 +1,158 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Stonetusk Boar,Forest Spider,Kobold Tunneler,Rockhide Boar",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [
+      [
+        -9936.144,
+        401.3917,
+        34.99985
+      ],
+      [
+        -9964.836,
+        377.2316,
+        35.6878662
+      ]
+    ],
+    "BlackListCount": 2,
+    "Bones": [
+      [
+        -9522.814,
+        149.249023,
+        59.9158249
+      ],
+      [
+        -9593.798,
+        195.612122,
+        48.76793
+      ],
+      [
+        -9668.863,
+        207.555374,
+        50.1422577
+      ],
+      [
+        -9725.152,
+        244.597885,
+        48.82326
+      ],
+      [
+        -9764.391,
+        276.8257,
+        44.0209274
+      ],
+      [
+        -9816.896,
+        359.102966,
+        37.4901543
+      ],
+      [
+        -9862.05,
+        384.136017,
+        35.0007
+      ],
+      [
+        -9895.715,
+        417.862274,
+        35.309082
+      ],
+      [
+        -9920.3125,
+        444.986847,
+        34.5799141
+      ],
+      [
+        -9956.29,
+        393.8148,
+        35.0590248
+      ],
+      [
+        -9903.214,
+        351.542816,
+        34.6995773
+      ],
+      [
+        -9920.461,
+        286.417419,
+        36.9823227
+      ],
+      [
+        -9985.123,
+        212.7773,
+        30.9976463
+      ],
+      [
+        -9964.443,
+        126.7417,
+        33.2746353
+      ],
+      [
+        -9948.452,
+        80.52176,
+        33.09943
+      ],
+      [
+        -9879.765,
+        46.1818733,
+        30.83286
+      ],
+      [
+        -9809.479,
+        48.84276,
+        35.2103653
+      ],
+      [
+        -9760.896,
+        38.3565979,
+        37.32483
+      ],
+      [
+        -9712.746,
+        73.6586,
+        50.1669273
+      ],
+      [
+        -9625.89551,
+        75.797,
+        61.978363
+      ]
+    ],
+    "BoneCount": 20,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Kurran Steele",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -9457.644,
+      "Y": 99.68837,
+      "Z": 58.3439064
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Kurran Steele",
+    "SellVendorVec": {
+      "X": -9457.644,
+      "Y": 99.68837,
+      "Z": 58.3439064
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Mana Wyrm,Springpaw Cub,Springpaw Lynx",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        10382.3467,
+        -6250.18652,
+        27.49879
+      ],
+      [
+        10351.73,
+        -6167.063,
+        30.9798489
+      ],
+      [
+        10263.01,
+        -6203.454,
+        20.7799625
+      ],
+      [
+        10291.1387,
+        -6260.09961,
+        27.193718
+      ]
+    ],
+    "BoneCount": 4,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Jainthess Thelryn",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 10416.7891,
+      "Y": -6316.666,
+      "Z": 35.5733681
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Jainthess Thelryn",
+    "SellVendorVec": {
+      "X": 10416.7891,
+      "Y": -6316.666,
+      "Z": 35.5733681
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Small Crag Boar,Frostmane Troll Whelp",
+    "CombatRadius": 40,
+    "AutoTarget": false,
+    "AutoLoot": false,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -6195.83154,
+        486.5311,
+        386.57785
+      ],
+      [
+        -6158.59033,
+        608.7496,
+        386.6149
+      ],
+      [
+        -6195.80957,
+        746.1736,
+        386.896
+      ],
+      [
+        -6295.91846,
+        773.2324,
+        387.53363
+      ],
+      [
+        -6384.07129,
+        700.7941,
+        386.864441
+      ],
+      [
+        -6453.47656,
+        653.623535,
+        386.8712
+      ],
+      [
+        -6492.11133,
+        560.8925,
+        391.5984
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Rybrad Coldbank",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -6101.101,
+      "Y": 390.5695,
+      "Z": 395.5428
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Rybrad Coldbank",
+    "SellVendorVec": {
+      "X": -6101.101,
+      "Y": 390.5695,
+      "Z": 395.5428
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

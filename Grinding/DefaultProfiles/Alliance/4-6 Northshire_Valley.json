@@ -1,0 +1,48 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Kobold Worker",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -8777.943,
+        -134.151123,
+        82.5630646
+      ],
+      [
+        -8772.116,
+        -107.939232,
+        84.79832
+      ],
+      [
+        -8705.843,
+        -109.5114,
+        89.4011459
+      ],
+      [
+        -8771.74,
+        -190.034546,
+        84.26261
+      ]
+    ],
+    "BoneCount": 4,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -8898.231,
+      "Y": -119.837891,
+      "Z": 81.8329239
+    },
+    "VendorName": "Godric Rothgar"
+  }
+]

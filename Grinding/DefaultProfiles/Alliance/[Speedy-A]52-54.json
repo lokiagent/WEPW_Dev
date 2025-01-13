@@ -1,0 +1,82 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 1000,
+    "GatherWhiteList": "Truesilver Deposit,Mithril Deposit,Gold Vein,Dark Iron Deposit,Small Thorium Vein,Rich Thorium Vein",
+    "CombatWhiteList": "Venomtip Scorpid,Black Broodling,Ember Worg,Firegut Ogre,Deathlash Scorpid,Firegut Ogre Mage,Firegut Brute",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -8179.26563,
+        -2807.821,
+        136.677673
+      ],
+      [
+        -8221.455,
+        -2618.05542,
+        133.526489
+      ],
+      [
+        -8157.36963,
+        -2542.78271,
+        139.39679
+      ],
+      [
+        -7981.17139,
+        -2354.779,
+        124.808266
+      ],
+      [
+        -8014.90869,
+        -2451.3916,
+        130.480423
+      ],
+      [
+        -8116.02441,
+        -2616.618,
+        133.496124
+      ],
+      [
+        -8072.26563,
+        -2752.85083,
+        138.781082
+      ]
+    ],
+    "BoneCount": 7,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Felder Stover",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -8366.361,
+      "Y": -2762.50781,
+      "Z": 187.53479
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Felder Stover",
+    "SellVendorVec": {
+      "X": -8366.361,
+      "Y": -2762.50781,
+      "Z": 187.53479
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

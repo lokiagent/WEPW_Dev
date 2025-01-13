@@ -1,0 +1,127 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Bonestripper Buzzard,Deranged Helboar,Starving Helboar",
+    "CombatRadius": 50,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -958.3797,
+        2667.63,
+        18.2662582
+      ],
+      [
+        -981.7333,
+        2569.39941,
+        4.269802
+      ],
+      [
+        -927.2804,
+        2457.437,
+        1.32111537
+      ],
+      [
+        -890.645569,
+        2347.51782,
+        -5.351087
+      ],
+      [
+        -885.4916,
+        2244.43262,
+        5.917669
+      ],
+      [
+        -789.020935,
+        2224.2644,
+        9.252735
+      ],
+      [
+        -716.4415,
+        2116.25586,
+        29.35863
+      ],
+      [
+        -777.6537,
+        1937.79712,
+        49.28543
+      ],
+      [
+        -651.6013,
+        1956.22266,
+        61.6509972
+      ],
+      [
+        -678.7625,
+        2147.46777,
+        35.5326271
+      ],
+      [
+        -715.402344,
+        2193.7002,
+        19.7300568
+      ],
+      [
+        -725.8783,
+        2239.15,
+        14.7325068
+      ],
+      [
+        -735.147644,
+        2326.32251,
+        20.4420319
+      ],
+      [
+        -817.256836,
+        2391.86035,
+        11.1775036
+      ],
+      [
+        -818.125,
+        2477.09375,
+        25.7137871
+      ],
+      [
+        -888.2628,
+        2551.21777,
+        19.3532181
+      ]
+    ],
+    "BoneCount": 16,
+    "RepairAtVendor": true,
+     "RepairVendorName": "Hagash the Blind",
+    "RepairAt": 20,
+    "RepairVendorVec": {
+      "X": -1329.01392,
+      "Y": 2397.58447,
+      "Z": 89.07535
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Hagash the Blind",
+    "SellVendorVec": {
+      "X": -1329.01392,
+      "Y": 2397.58447,
+      "Z": 89.07535
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

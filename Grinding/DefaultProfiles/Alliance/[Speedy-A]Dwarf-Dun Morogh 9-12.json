@@ -1,0 +1,62 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Rockjaw Skullthumper",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -5764.56445,
+        -1638.85522,
+        358.950836
+      ],
+      [
+        -5814.07,
+        -1645.23438,
+        358.811737
+      ],
+      [
+        -5815.391,
+        -1543.06641,
+        358.273
+      ]
+    ],
+    "BoneCount": 3,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Frast Dokner",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -5711.56836,
+      "Y": -1593.54517,
+      "Z": 383.204681
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Frast Dokner",
+    "SellVendorVec": {
+      "X": -5711.56836,
+      "Y": -1593.54517,
+      "Z": 383.204681
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

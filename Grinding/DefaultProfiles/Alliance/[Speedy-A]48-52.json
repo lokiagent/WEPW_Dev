@@ -1,0 +1,118 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 200,
+    "GatherWhiteList": "Dark Iron Vein,Mithril Deposit,Small Thorium Vein,Truesilver Deposit",
+    "CombatWhiteList": "Greater Lava Spider,Twilight Fire Guard,Twilight Dark Shaman,Inferno Elemental,Magma Elemental,Heavy War Golem",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [
+      [
+        -6732.74,
+        -1087.57715,
+        246.180145
+      ]
+    ],
+    "BlackListCount": 1,
+    "Bones": [
+      [
+        -6628.945,
+        -957.3031,
+        248.6062
+      ],
+      [
+        -6679.2666,
+        -820.185059,
+        244.145
+      ],
+      [
+        -6902.86865,
+        -869.474365,
+        251.834564
+      ],
+      [
+        -6947.101,
+        -987.135742,
+        241.667343
+      ],
+      [
+        -7050.92725,
+        -945.2037,
+        265.405518
+      ],
+      [
+        -7172.74268,
+        -866.121033,
+        312.766785
+      ],
+      [
+        -7237.033,
+        -817.887,
+        298.850525
+      ],
+      [
+        -7295.94775,
+        -937.697449,
+        245.295624
+      ],
+      [
+        -7177.26953,
+        -1030.18115,
+        241.6645
+      ],
+      [
+        -7158.01172,
+        -1107.87537,
+        244.065155
+      ],
+      [
+        -6883.919,
+        -1022.56952,
+        245.820038
+      ],
+      [
+        -6742.545,
+        -957.4961,
+        245.699646
+      ],
+      [
+        -6640.52832,
+        -1121.98181,
+        244.453918
+      ]
+    ],
+    "BoneCount": 13,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Graw Cornerstone",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -7215.124,
+      "Y": -1248.96619,
+      "Z": 254.6671
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Graw Cornerstone",
+    "SellVendorVec": {
+      "X": -7215.124,
+      "Y": -1248.96619,
+      "Z": 254.6671
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Stonetusk Boar",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -9994.818,
+        82.60017,
+        34.920475
+      ],
+      [
+        -9950.249,
+        125.760788,
+        33.15565
+      ],
+      [
+        -9909.406,
+        88.8091049,
+        32.3096771
+      ],
+      [
+        -9945.18,
+        46.83023,
+        33.13531
+      ]
+    ],
+    "BoneCount": 4,
+    "RepairAtVendor": true,
+    "RepairAt": 30,
+    "SellGrays": true,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": -10008.2939,
+      "Y": 65.2117,
+      "Z": 34.78354
+    },
+    "VendorName": "Joshua Maclure"
+  }
+]

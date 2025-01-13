@@ -1,0 +1,38 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Mottled Boar",
+    "CombatRadius": 1000,
+    "AutoTarget": true,
+    "AutoLoot": false,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -543.69574,
+        -4285.553,
+        37.4729424
+      ],
+      [
+        -398.0295,
+        -4311.256,
+        43.8528938
+      ]
+    ],
+    "BoneCount": 2,
+    "RepairAtVendor": false,
+    "RepairAt": 30,
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "VendorName": null
+  }
+]

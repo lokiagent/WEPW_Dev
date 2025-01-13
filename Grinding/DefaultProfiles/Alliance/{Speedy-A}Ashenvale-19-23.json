@@ -1,0 +1,102 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 500,
+    "GatherWhiteList": "Briarthorn,Kingsblood,Bruiseweed",
+    "CombatWhiteList": "Ghostpaw Runner,Wildthorn Stalker",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": false,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        2815.90918,
+        -103.370087,
+        101.322533
+      ],
+      [
+        2759.73413,
+        -41.7784157,
+        91.06666
+      ],
+      [
+        2640.637,
+        -62.78735,
+        93.24252
+      ],
+      [
+        2598.49634,
+        -15.8556328,
+        90.91866
+      ],
+      [
+        2562.529,
+        69.95463,
+        89.95884
+      ],
+      [
+        2558.74463,
+        72.67538,
+        89.49045
+      ],
+      [
+        2490.00586,
+        30.7701,
+        86.15017
+      ],
+      [
+        2540.67773,
+        -21.9497433,
+        86.56679
+      ],
+      [
+        2622.73364,
+        -86.76203,
+        98.0466843
+      ],
+      [
+        2660.43579,
+        -137.878754,
+        103.9268
+      ],
+      [
+        2725.82129,
+        -137.881943,
+        101.62442
+      ]
+    ],
+    "BoneCount": 11,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Aeolynn",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 2769.50122,
+      "Y": -288.052032,
+      "Z": 111.108482
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Aeolynn",
+    "SellVendorVec": {
+      "X": 2769.50122,
+      "Y": -288.052032,
+      "Z": 111.108482
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "",
+    "CombatWhiteList": "Timberling",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": false,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        9572.297,
+        1031.89221,
+        1264.16211
+      ],
+      [
+        9548.234,
+        986.3413,
+        1263.68579
+      ],
+      [
+        9608.165,
+        898.582947,
+        1262.444
+      ],
+      [
+        9611.562,
+        751.2409,
+        1265.58655
+      ],
+      [
+        9594.955,
+        688.7369,
+        1267.51733
+      ],
+      [
+        9548.512,
+        718.060242,
+        1255.80872
+      ]
+    ],
+    "BoneCount": 6,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Brannol Eaglemoon",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 9786.353,
+      "Y": 957.0792,
+      "Z": 1308.77979
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Brannol Eaglemoon",
+    "SellVendorVec": {
+      "X": 9786.353,
+      "Y": 957.0792,
+      "Z": 1308.77979
+    },
+    "UseSellVendor": false,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

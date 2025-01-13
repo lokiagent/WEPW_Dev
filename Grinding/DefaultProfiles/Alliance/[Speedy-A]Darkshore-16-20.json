@@ -1,0 +1,117 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 0,
+    "GatherWhiteList": "Peacebloom,Silverleaf,Mageroyal,Briarthorn,Bruiseweed",
+    "CombatWhiteList": "Foreststrider,Moonstalker,Grizzled Thistle Bear,Rabid Thistle Bear,Moonstalker Sire,Giant Foreststrider",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        4930.951,
+        261.480652,
+        42.4740067
+      ],
+      [
+        4945.132,
+        326.642456,
+        36.4750671
+      ],
+      [
+        5028.42334,
+        346.755646,
+        29.3199615
+      ],
+      [
+        5168.84668,
+        394.159882,
+        32.68483
+      ],
+      [
+        5218.286,
+        339.188141,
+        32.23578
+      ],
+      [
+        5304.59668,
+        354.259827,
+        30.3380356
+      ],
+      [
+        5289.584,
+        451.070435,
+        20.5559387
+      ],
+      [
+        5168.61475,
+        488.724579,
+        18.5412769
+      ],
+      [
+        5031.55127,
+        465.8797,
+        19.8969021
+      ],
+      [
+        4916.657,
+        471.516785,
+        29.4900227
+      ],
+      [
+        4829.487,
+        477.3154,
+        31.9894638
+      ],
+      [
+        4755.638,
+        441.03302,
+        33.6202049
+      ],
+      [
+        4750.369,
+        337.955231,
+        54.03901
+      ],
+      [
+        4875.32861,
+        243.555649,
+        49.670826
+      ]
+    ],
+    "BoneCount": 14,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Elisa Steelhand",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 6538.28955,
+      "Y": 443.296875,
+      "Z": 7.141129
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Tiyani",
+    "SellVendorVec": {
+      "X": 4986.993,
+      "Y": 80.03953,
+      "Z": 52.74028
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

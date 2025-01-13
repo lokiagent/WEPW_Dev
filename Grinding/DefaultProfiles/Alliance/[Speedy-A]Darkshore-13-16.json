@@ -1,0 +1,92 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 10000,
+    "GatherWhiteList": "Peacebloom,Silverleaf,Earthroot,Briarthorn,Mageroyal",
+    "CombatWhiteList": "Thistle Bear,Moonstalker Runt,Moonstalker,Rabid Thistle Bear,Moonstalker,Foreststrider,Moonkin,Raging Moonkin,Young Moonkin",
+    "CombatRadius": 60,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        6294.85449,
+        386.334656,
+        29.8496723
+      ],
+      [
+        6194.99365,
+        465.4257,
+        19.5151253
+      ],
+      [
+        5992.45654,
+        430.4532,
+        22.0641785
+      ],
+      [
+        5865.87256,
+        429.993835,
+        16.03042
+      ],
+      [
+        5733.779,
+        352.007874,
+        23.8831825
+      ],
+      [
+        5845.792,
+        234.37027,
+        31.039156
+      ],
+      [
+        6015.14258,
+        210.121887,
+        26.9119015
+      ],
+      [
+        6141.52539,
+        255.800949,
+        25.7393684
+      ],
+      [
+        6274.87354,
+        249.292114,
+        33.4003639
+      ]
+    ],
+    "BoneCount": 9,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Elisa Steelhand",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": 6538.28955,
+      "Y": 443.296875,
+      "Z": 7.14086533
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Elisa Steelhand",
+    "SellVendorVec": {
+      "X": 6538.28955,
+      "Y": 443.296875,
+      "Z": 7.14086533
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]

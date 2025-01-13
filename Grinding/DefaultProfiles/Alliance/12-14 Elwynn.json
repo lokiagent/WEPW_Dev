@@ -1,0 +1,48 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 10000,
+    "GatherWhiteList": "Peacebloom,Silverleaf,Earth Root",
+    "CombatWhiteList": "Prowler,Young Forest Bear,Murloc Lurker",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": false,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -9636.9,
+        -1079.80469,
+        44.3399429
+      ],
+      [
+        -9829.388,
+        -1219.51416,
+        36.80405
+      ],
+      [
+        -9899.852,
+        -1290.85889,
+        32.42244
+      ],
+      [
+        -9597.794,
+        -1545.67847,
+        58.9004478
+      ]
+    ],
+    "BoneCount": 4,
+    "RepairAtVendor": false,
+    "RepairAt": 30,
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "VendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "VendorName": null
+  }
+]

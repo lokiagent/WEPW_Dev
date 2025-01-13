@@ -1,0 +1,112 @@
+[
+  {
+    "ProfileType": "Gather",
+    "GatherDistance": 100,
+    "GatherWhiteList": "Iron Deposit,Gold Vein,Silver Vein,Tin Vein,Khadgar's Whisker,Lifebloom,Fadeleaf,Kingsblood,Wild Steelbloom",
+    "CombatWhiteList": "Young Stranglethorn Tiger,Stranglethorn Tiger,River Crocolisk,Young Panther,Mistvale Gorilla",
+    "CombatRadius": 40,
+    "AutoTarget": true,
+    "AutoLoot": true,
+    "AutoSkin": true,
+    "LoopUntilStopped": true,
+    "BlackListedAreas": [],
+    "BlackListCount": 0,
+    "Bones": [
+      [
+        -11667.9736,
+        -121.483315,
+        17.2752285
+      ],
+      [
+        -11714.7354,
+        -55.36581,
+        15.5655594
+      ],
+      [
+        -11734.0254,
+        18.29371,
+        17.12847
+      ],
+      [
+        -11665.8516,
+        105.931854,
+        16.2267189
+      ],
+      [
+        -11585.8994,
+        171.2873,
+        17.20786
+      ],
+      [
+        -11497.417,
+        233.6825,
+        18.0042667
+      ],
+      [
+        -11572.71,
+        114.34874,
+        18.0742149
+      ],
+      [
+        -11611.499,
+        4.57177734,
+        11.7303658
+      ],
+      [
+        -11615.083,
+        -129.463333,
+        16.39049
+      ],
+      [
+        -11791.1338,
+        -181.809021,
+        16.7375126
+      ],
+      [
+        -11858.9932,
+        -245.8564,
+        14.9939766
+      ],
+      [
+        -11893.1982,
+        -176.19252,
+        17.209631
+      ],
+      [
+        -11765.6084,
+        -114.765495,
+        16.7798386
+      ]
+    ],
+    "BoneCount": 13,
+    "RepairAtVendor": true,
+    "RepairVendorName": "Jaquilina Dramet",
+    "RepairAt": 30,
+    "RepairVendorVec": {
+      "X": -11622.1445,
+      "Y": -60.61648,
+      "Z": 10.9550858
+    },
+    "SellGrays": false,
+    "SellGraysAt": 2,
+    "SellVendorName": "Jaquilina Dramet",
+    "SellVendorVec": {
+      "X": -11622.1445,
+      "Y": -60.61648,
+      "Z": 10.9550858
+    },
+    "UseSellVendor": true,
+    "PurchaseAmount": 1,
+    "PurchaseVendorName": null,
+    "PurchaseVendorVec": {
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0
+    },
+    "UsePurchaseVendor": false,
+    "ItemToPurchase": null,
+    "FlightPath": false,
+    "FlightPathVectorCount": 0,
+    "FlightPathVectors": []
+  }
+]
