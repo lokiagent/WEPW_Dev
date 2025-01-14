@@ -20,7 +20,7 @@ end
 local function HandleFlightPath(name, coords)
     Log("Starting " .. name .. " flight path function")
     QuestGoToPoint(table.unpack(coords))
-    for _, unit in ipairs(GetUnitsList()) do
+    foreach Unit in Units do
         Log(unit.Name)
         if unit.Name == name and IsUnitValid(unit) then
             Log("Found flight master!")
@@ -76,7 +76,6 @@ if GetPlayerClass() == "Warrior" then
 end
 AcceptQuestUsingDB(94); Log("Accepting quest: [21]A Watchful Eye");
 --Step 1: Entering Redridge Mountains
-AcceptQuestUsingDB(246); Log("Accepting quest: [17]Assessing the Threat");
 AcceptQuestUsingDB(20); Log("Accepting quest: [21]Blackrock Menace");
 AcceptQuestUsingDB(125); Log("Accepting quest: [26]The Lost Tools");
 AcceptQuestUsingDB(122); Log("Accepting quest: [18]Undeerbelly Scales");
@@ -92,21 +91,17 @@ CompleteObjectiveOfQuest(125,1); Log("Completing Quest Objective: [26]The Lost T
 TurnInQuestUsingDB(125); Log("Turning in Quest: [26]The Lost Tools"); 
 AcceptQuestUsingDB(89); Log("Accepting quest: [20]The Everstill Bridge");
 TurnInQuestUsingDB(3741); Log("Turning in Quest: [15]Hillary's Necklace");
+CompleteObjectiveOfQuest(92,1); Log("Completing Quest Objective: [18]Redridge Goulash");
+CompleteObjectiveOfQuest(122,1); Log("Completing Quest Objective: [18]Underbelly Scales");
 --Step 1.5: Grind to Level 24 before proceeding
 
 
 --Step 2: Completing Quest Objectives
-CompleteObjectiveOfQuest(246,1); Log("Completing Quest Objective: [17]Assessing the Threat");
-CompleteObjectiveOfQuest(246,2); Log("Completing Quest Objective: [17]Assessing the Threat");
-CompleteObjectiveOfQuest(122,1); Log("Completing Quest Objective: [18]Underbelly Scales");
+
+
 CompleteObjectiveOfQuest(127,1); Log("Completing Quest Objective: [21]Selling Fish");
 CompleteObjectiveOfQuest(150,1); Log("Completing Quest Objective: [20]Murloc Poachers");
-CompleteObjectiveOfQuest(92,1); Log("Completing Quest Objective: [18]Redridge Goulash");
 
-if Player.Level < 24 then
-    Log("Player is under Level 24, Proceeding to Grind at Lake Everstill");
-    QuestGoToPoint(-9079.715, -2359.222, 132.7907);
-    GrindAreaUntilLevel(24);
-end
+
 
 StopQuestProfile(); -- Stop the quest profile
