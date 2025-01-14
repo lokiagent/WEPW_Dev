@@ -305,13 +305,17 @@ if HasPlayerFinishedQuest(104) ~= true then
     TurnInQuestUsingDB(152); Log("Turn-in: [19]The Coast Isn't Clear");
     TurnInQuestUsingDB(104); Log("Turn-in: [20]The Coastal Menance");
 end
-if HasPlayerFinishedQuest ~= true then 
+if HasPlayerFinishedQuest(136) ~= true and HasItem("Captain Sander's Treasure Map") ~= true then 
     Murlocs={458,171};
     KillMurlocs=CreateObjective("KillMobsAndLoot",1,1,1,136,TableToList(Murlocs));
     KillMobsUntilItem("Captain Sander's Treasure Map",KillMurlocs,1);
 end
-AcceptQuestUsingDB(136); -- [16] Captain Sanders' Hidden Treasure
-CompleteEntireQuest(136); Log("Completing: [16] Captain Sanders' Hidden Treasure"); AcceptQuestUsingDB(138); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
+if HasItem("Captain Sander's Treasure Map") == true then
+    UseItem("Captain Sander's Treasure Map");
+end
+--AcceptQuestUsingDB(136); -- [16] Captain Sanders' Hidden Treasure
+CompleteEntireQuest(136); Log("Completing: [16] Captain Sanders' Hidden Treasure");
+AcceptQuestUsingDB(138); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
 if HasPlayerFinishedQuest(138)==false then
     QuestGoToPoint(-10514.52, 1598.402, 44.1889);
     function UseBarrel() 
@@ -356,4 +360,4 @@ if (Player.Level < 21) then
 end;
 -- End of Profile
 Log("This is the end of Westfall questing profile");
-StopQuestProfile();
+StopQuestProfile(); 
