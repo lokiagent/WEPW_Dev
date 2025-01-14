@@ -133,6 +133,8 @@ end
 if GetPlayerClass() ~= "Warlock" then
     BlackListSellVendorByName("Cylina Darkheart");
 end
+BlackListRepairVendorByName("Defias Profiteer");
+BlackListSellVendorByName("Defias Profiteer");
 --BlackListSellVendorByName(string Name);
 --------------------------------------------------------------------------------------
 
