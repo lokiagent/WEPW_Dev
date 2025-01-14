@@ -184,7 +184,7 @@ CompleteObjectiveOfQuest(6,1); Log("Complete: [5]Bounty on Garrick Padfoot; Obje
 if Player.Level < 7 then
     Log("Player is under Level 7, Proceeding to Grind at Northshire Abbey");
     --BlackListUnitGUID(103); --Adding Padfoot to the Blacklist so we don't interfere with other's questing
-    GrindAreaUntilLevel(7,TableToList{38},true);
+    GrindUntilLevel(7,TableToList{38},true);
     PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
 end
 --Step 4: Eurupe's: The Final (Class)Questdown
