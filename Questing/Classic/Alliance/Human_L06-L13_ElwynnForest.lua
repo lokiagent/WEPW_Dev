@@ -162,8 +162,11 @@ function UseHearthstone()
         SleepPlugin(100);
     end
 end
-
-
+function BundleOfWood()
+    if ItemCount("Bundle of Wood") == 8 then
+        return false
+    end
+end
 --------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------
@@ -182,6 +185,8 @@ GuardRoberts = {80}; -- Table to load Guard Roberts
 HealGuardRoberts = CreateObjective("KillMobsAndLoot",1,12,1,21,TableToList(GuardRoberts));
 DefiasRogueWizard = {474}; -- Table to load Defias Rogue Wizards
 RiverpawGnolls = {97,478}; -- Table to load Riverpaw Gnolls
+
+Wood = {176793}
 --------------------------------------------------------------------------------------
 ---                          End Manual Quest Objectives                           ---
 --------------------------------------------------------------------------------------
@@ -312,10 +317,7 @@ end
 TurnInQuestUsingDB(45); Log("Completing: [10]Discover Rolf's Fate");
 AcceptQuestUsingDB(71); Log("Accepting: [10]Report to Thomas");
 --Custom Gather for [9]A Bundle of Trouble
-BundleOfWood = {};
-BundleOfWood[1] = 176793;
-GatherWood = CreateObjective("GatherObj",1,8,1,5545,TableToList(BundleOfWood));
-DoObjective(GatherWood);
+GrindAndGather(TableToList(Wood),250,TableToFloatArray({-9431.718,-1304.944,47.10697}),false,"BundleOfWood"); Log("Gathering Bundles of Wood for [9]A Bundle of Trouble")
 --CompleteObjectiveOfQuest(5545,1); Log("Completing Objective: [9]A Bundle of Trouble");
 CompleteEntireQuest(52); Log("Completing: [10]Protect the Frontier:Killing Forest Bears");
 if (IsOnQuest(5545) == true and IsOnQuest(83) ~= true) then
