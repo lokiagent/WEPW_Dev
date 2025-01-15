@@ -311,7 +311,8 @@ if (IsOnQuest(5545) == true and IsOnQuest(71) ~= true) then
 end 
 TurnInQuestUsingDB(45); Log("Completing: [10]Discover Rolf's Fate");
 AcceptQuestUsingDB(71); Log("Accepting: [10]Report to Thomas");
-CompleteObjectiveOfQuest(5545,1); Log("Completing Objective: [9]A Bundle of Trouble");
+--CompleteObjectiveOfQuest(5545,1); Log("Completing Objective: [9]A Bundle of Trouble");
+GrindAndGather(TableToList(176793),250,TableToFloatArray({-9055.347,-337.7026,74.02544}), false);
 CompleteEntireQuest(52); Log("Completing: [10]Protect the Frontier:Killing Forest Bears");
 if (IsOnQuest(5545) == true and IsOnQuest(83) ~= true) then
     VendorName = "Katie Hunter"; VendorID=384; VendorLOC=GetNPCPostionFromDB(VendorID);
