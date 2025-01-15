@@ -89,7 +89,7 @@ AcceptQuestUsingDB(146); Log("Accept: [18]Messenger to Darkshire");
 --20250114-Good Place to see about buying booze for (116)Dry Times.
 -----------
 if (IsOnQuest(146) == true and IsOnQuest(163) ~= true) then
-    FMloc.Duskwood();
+    --FMloc.Duskwood();
 end
 --Step 2: The evening chill settles in Duskwood
 AcceptQuestUsingDB(163); Log("Accept: [20]Raven Hill");
@@ -99,12 +99,22 @@ TurnInQuestUsingDB(163); Log("Turn-in: [20]Raven Hill");
 AcceptQuestUsingDB(5); Log("Accept: [20]Jitter's Growling Gut");
 TurnInQuestUsingDB(164); Log("Turn-in: [23]Deliveries to Sven");
 AcceptQuestUsingDB(226); Log("Accept: [21]Wolves At Our Heels");
+----------------------------------------------------------------
+-------Pre-gathering Gooey Spider Legs for Upcoming Quest-------
+----------------------------------------------------------------
+if ItemCount("Gooey Spider Leg") < 6 then
+    Spiders = {539,569,930,217,565}; -- Table to load ShamWow Guy in Jail does Spiders
+    KillSpiders = CreateObjective("KillMobsAndLoot",1,10,1,93,TableToList(Spiders));
+    KillMobsUntilItem("Gooey Spider Leg",KillSpiders,6);
+end
 CompleteObjectiveOfQuest(245,1); Log("Completing Objective [21]Eight-Legged Menances: (15)Pygmy Venom Web Spider");
 CompleteObjectiveOfQuest(226,1); Log("Completing Objective [21]Wolves At Our Heels: (12) Starving Dire Wolf");
 CompleteObjectiveOfQuest(226,2); Log("Completing Objective [21]Wolves At Our Heels: (8) Rabid Dire Wolf");
 TurnInQuestUsingDB(226);Log("Turn-in: [21]Wolves At Our Heels");
 TurnInQuestUsingDB(245);Log("Turn-in: [21]Eight-Legged Menances");
 TurnInQuestUsingDB(5); Log("Turn-in: [20]Jitter's Growling Gut");
+AcceptQuestUsingDB(93); Log("Accept: [20]Dusky Crab Cakes");
+TurnInQuestUsingDB(93); Log("Turn-in: [20]Dusky Crab Cakes");
 -----Check for more Pickups
 FP.Duskwood();
 --Step 3: What happens in the Mountains stays in the Mountains
