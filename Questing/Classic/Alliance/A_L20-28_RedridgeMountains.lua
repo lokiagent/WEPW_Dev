@@ -8,10 +8,10 @@ Player = GetPlayer();
 ------------------------------------------------------------------
 --------------------Loading External Functions--------------------
 ------------------------------------------------------------------
-local _EK_FlightPaths = loadfile("Profiles\\Questing\\ConfigFiles\\A_EK_FlightPaths.lua")
+local _EK_FlightPaths = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlightPaths.lua")
 local FMloc -- Declare the Test variable in this scope
 FMloc = _EK_FlightPaths()
-local _EK_FlyTo = loadfile("Profiles\\Questing\\ConfigFiles\\A_EK_FlyTo.lua")
+local _EK_FlyTo = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlyTo.lua")
 local FlyTo
 FlyTo = _EK_FlyTo()
 
@@ -25,21 +25,12 @@ end
 if GetPlayerClass() == "Warrior" then
     AcceptQuestUsingDB(1698); Log("Accept: [20]Yura's Barleybrew");
 end
-AcceptQuestUsingDB(94); Log("Accept: [21]A Watchful Eye");
+--AcceptQuestUsingDB(94); Log("Accept: [21]A Watchful Eye"); --This is an elite chain after initial quest......probably gonna drop
 --Step 1: Entering Redridge Mountains
-AcceptQuestUsingDB(20); Log("Accept: [21]Blackrock Menace");
-AcceptQuestUsingDB(125); Log("Accept: [26]The Lost Tools");
-AcceptQuestUsingDB(122); Log("Accept: [18]Undeerbelly Scales");
-AcceptQuestUsingDB(124); Log("Accept: [20]A Baying of Gnolls");
-AcceptQuestUsingDB(127); Log("Accept: [21]Selling Fish");
-AcceptQuestUsingDB(150); Log("Accept: [20]Murloc Poachers");
 AcceptQuestUsingDB(92); Log("Accept: [18]Redridge Goulash");
-AcceptQuestUsingDB(89); Log("Accept: [20]The Everstill Bridge");
 AcceptQuestUsingDB(1097); Log("Accept: [15]Elmore's Task");
 AcceptQuestUsingDB(118); Log("Accept: [18]The Price of Shoes");
-AcceptQuestUsingDB(91); Log("Accept: [23]Solomon's Law");
 AcceptQuestUsingDB(120); Log("Accept: [14]Messenger to Stormwind");
-AcceptQuestUsingDB(34); Log("Accept: [24]An Unwelcome Guest");
 
 --Step 2: Stormwind HO!!!!!!!!!!!!!!!!!
 if (HasPlayerFinishedQuest(120) ~= true or HasPlayerFinishedQuest(1097) ~= true or HasPlayerFinishedQuest(118) ~= true) then
@@ -88,6 +79,9 @@ AcceptQuestUsingDB(146); Log("Accept: [18]Messenger to Darkshire");
 -----------
 --20250114-Good Place to see about buying booze for (116)Dry Times.
 -----------
+if Player.Level < 20 then --This is NEEDED as next set of quests require L20 to start picking up
+    GrindAreaUntilLvl(20);
+end
 if (IsOnQuest(146) == true and IsOnQuest(163) ~= true) then
     --FMloc.Duskwood();
 end
@@ -102,7 +96,7 @@ AcceptQuestUsingDB(226); Log("Accept: [21]Wolves At Our Heels");
 ----------------------------------------------------------------
 -------Pre-gathering Gooey Spider Legs for Upcoming Quest-------
 ----------------------------------------------------------------
-if ItemCount("Gooey Spider Leg") < 6 then
+if (ItemCount("Gooey Spider Leg") < 6) and HasPlayerFinishedQuest(93) ~= true then
     Spiders = {539,569,930,217,565}; -- Table to load ShamWow Guy in Jail does Spiders
     KillSpiders = CreateObjective("KillMobsAndLoot",1,10,1,93,TableToList(Spiders));
     KillMobsUntilItem("Gooey Spider Leg",KillSpiders,6);
@@ -116,28 +110,61 @@ TurnInQuestUsingDB(5); Log("Turn-in: [20]Jitter's Growling Gut");
 AcceptQuestUsingDB(93); Log("Accept: [20]Dusky Crab Cakes");
 TurnInQuestUsingDB(93); Log("Turn-in: [20]Dusky Crab Cakes");
 -----Check for more Pickups
-FP.Duskwood();
+--FMloc.Duskwood();
 --Step 3: What happens in the Mountains stays in the Mountains
+AcceptQuestUsingDB(20); Log("Accept: [21]Blackrock Menace");
+AcceptQuestUsingDB(122); Log("Accept: [18]Undeerbelly Scales");
+
+AcceptQuestUsingDB(34); Log("Accept: [24]An Unwelcome Guest");
 TurnInQuestUsingDB(119); Log("Turn-in: [18]Return to Verner");
-CompleteObjectiveOfQuest(92,1); Log("Completing Objective [18]Redridge Goulash: (5)Great Goretusk Snout");
-CompleteObjectiveOfQuest(92,2); Log("Completing Objective [18]Redridge Goulash: (5)Tough Condor Meat");
-CompleteObjectiveOfQuest(92,3); Log("Completing Objective [18]Redridge Goulash: (5)Crisp Spider Meat");
-CompleteObjectiveOfQuest(122,1); Log("Completing Objective [18]Undeerbelly Scales: (6)Underbelly Whelp Scale");
-CompleteObjectiveOfQuest(89,1); Log("Completing Objective [20]The Everstill Bridge: (5)Iron Pike");
-CompleteObjectiveOfQuest(89,2); Log("Completing Objective [20]The Everstill Bridge: (5)Iron Rivet");
-CompleteObjectiveOfQuest(124,1); Log("Completing Objective [20]A Baying of Gnolls: (10)Redridge Brute");
-CompleteObjectiveOfQuest(124,2); Log("Completing Objective [20]A Baying of Gnolls: (8)Redridge Mystic");
+if CanTurnInQuest(116) == true then
+    TurnInQuestUsingDB(116); Log("Turn-in: [15]Dry Times");
+end
+TurnInQuestUsingDB(146); Log("Turn-in: [18]Messenger to Darkshire");
+if (ItemCount("Great Goretusk Snout") < 5) and HasPlayerFinishedQuest(92) ~= true then
+    FMloc.Redridge(); --Reset LOC
+    Goretusk = {547}; -- Table to load Goretusks
+    KillGoretusk = CreateObjective("KillMobsAndLoot",1,10,1,92,TableToList(Goretusk));
+    KillMobsUntilItem("Great Goretusk Snout",KillGoretusk,5);
+end
+if (ItemCount("Tough Condor Meat") < 5) and HasPlayerFinishedQuest(92) ~= true then
+    FMloc.Redridge(); --Reset LOC
+    Condor = {428}; -- Don't Let Rick know you're shanking Bird Person's Family
+    KillCondor = CreateObjective("KillMobsAndLoot",1,10,1,92,TableToList(Condor));
+    KillMobsUntilItem("Tough Condor Meat",KillCondor,5);
+end
+if (ItemCount("Crisp Spider Meat") < 5) and HasPlayerFinishedQuest(92) ~= true then
+    QuestGoToPoint(-9220.994, -2705.757, 90.29653); --Alther's Mill to do the Kill
+    Spider = {505}; --Its the Eye of the Spider is the thrill of the bite
+    KillSpider = CreateObjective("KillMobsAndLoot",1,10,1,92,TableToList(Spider));
+    KillMobsUntilItem("Crisp Spider Meat",KillSpider,5);
+end
+if (ItemCount("Underbelly Whelp Scale") < 6) and HasPlayerFinishedQuest(122) ~= true then
+    QuestGoToPoint(-9220.994, -2705.757, 90.29653); --Using this to get to where the mobs we want are
+    BlackDragonWhelp = {441};
+    KillBlackDragonWhelp = CreateObjective("KillMobsAndLoot",1,10,1,92,TableToList(BlackDragonWhelp));
+    KillMobsUntilItem("Underbelly Whelp Scale",KillBlackDragonWhelp,6);
+end
 --Step 3.5: Back in Town, NOT discussing what happened in the Mountains
 TurnInQuestUsingDB(92); Log("Turn-in: [18]Redridge Goulash");
-TurnInQuestUsingDB(122); Log("Turn-in: [18]Undeerbelly Scales");
-TurnInQuestUsingDB(89); Log("Turn-in: [20]The Everstill Bridge");
-TurnInQuestUsingDB(124); Log("Turn-in: [20]A Baying of Gnolls");
+TurnInQuestUsingDB(122); Log("Turn-in: [18]Underbelly Scales");
+
 
 
 
 
 --Step 2: Completing Quest Objectives
-
+--AcceptQuestUsingDB(124); Log("Accept: [20]A Baying of Gnolls");
+--AcceptQuestUsingDB(127); Log("Accept: [21]Selling Fish");
+--AcceptQuestUsingDB(150); Log("Accept: [20]Murloc Poachers");
+--AcceptQuestUsingDB(89); Log("Accept: [20]The Everstill Bridge");
+--AcceptQuestUsingDB(91); Log("Accept: [23]Solomon's Law");
+--CompleteObjectiveOfQuest(89,1); Log("Completing Objective [20]The Everstill Bridge: (5)Iron Pike");
+--CompleteObjectiveOfQuest(89,2); Log("Completing Objective [20]The Everstill Bridge: (5)Iron Rivet");
+--CompleteObjectiveOfQuest(124,1); Log("Completing Objective [20]A Baying of Gnolls: (10)Redridge Brute");
+--CompleteObjectiveOfQuest(124,2); Log("Completing Objective [20]A Baying of Gnolls: (8)Redridge Mystic");
+--TurnInQuestUsingDB(89); Log("Turn-in: [20]The Everstill Bridge");
+--TurnInQuestUsingDB(124); Log("Turn-in: [20]A Baying of Gnolls");
 
 
 
