@@ -5,102 +5,130 @@ UseDBToSell(true);
 SetQuestRepairAt(30);
 SetQuestSellAt(2);
 Player = GetPlayer();
---dofile("Profiles\\Questing\\[A]_EK_FlightPaths.lua");
-
-Log("Current Zone ID: "..GetZoneID());
-Log("Current Player Position:"..GetPlayer().Position);
+------------------------------------------------------------------
+--------------------Loading External Functions--------------------
+------------------------------------------------------------------
+local _EK_FlightPaths = loadfile("Profiles\\Questing\\ConfigFiles\\A_EK_FlightPaths.lua")
+local FMloc -- Declare the Test variable in this scope
+FMloc = _EK_FlightPaths()
+local _EK_FlyTo = loadfile("Profiles\\Questing\\ConfigFiles\\A_EK_FlyTo.lua")
+local FlyTo
+FlyTo = _EK_FlyTo()
 
 -- Function to set vendors for selling and repairing
 function SetVendors()
     local vendorIDs = { 1234, 5678 } -- Replace with actual vendor NPC IDs
     SetQuestSellVendors(vendorIDs);
 end
--- Functions to set Flight Paths
--- Function to handle flight paths
-local function HandleFlightPath(name, coords)
-    Log("Starting " .. name .. " flight path function")
-    QuestGoToPoint(table.unpack(coords))
-    foreach Unit in Units do
-        Log(unit.Name)
-        if unit.Name == name and IsUnitValid(unit) then
-            Log("Found flight master!")
-            InteractWithUnit(unit)
-            SleepPlugin(5000)
-            return
-        end
-    end
-end
-
--- Flight Path Functions
-function WestfallFP()
-    HandleFlightPath("Thor", { -10627.74, 1038.647, 34.12702 })
-end
-function StormwindFP()
-    HandleFlightPath("Dungar Longdrink", { -8834.801, 487.8065, 109.6138 })
-end
-function RedridgeFP()
-    HandleFlightPath("Ariena Stormfeather", { -9434.632, -2235.667, 69.05429 })
-end
-function DarkshireFP()
-    HandleFlightPath("Felicia Maline", { -10513.16, -1259.571, 41.42373 })
-end
--- Function to fly to destinations
-local function FlyToDestination(destination, sleepTime)
-    Log("Flying to " .. destination)
-    for _ = 1, 3 do
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro(destination)
-        SleepPlugin(2000)
-    end
-    SleepPlugin(sleepTime or 90000)
-end
--- Fly to specific destinations
-function FlyToStormwind()
-    FlyToDestination("Stormwind")
-end
-function FlyToWestfall()
-    FlyToDestination("Sentinel Hill")
-end
-function FlyToRedridgeMountains()
-    FlyToDestination("Lakeshire")
-end
-function FlyToDuskwood()
-    FlyToDestination("Darkshire")
-end
-
 ----------------Begin Redridge Mountains Questing Profile----------------
 --Step 0: Getting Out of Zone Starting Quests
 if GetPlayerClass() == "Warrior" then
-    AcceptQuestUsingDB(1698); Log("Accepting quest: [20]Yura's Barleybrew");
+    AcceptQuestUsingDB(1698); Log("Accept: [20]Yura's Barleybrew");
 end
-AcceptQuestUsingDB(94); Log("Accepting quest: [21]A Watchful Eye");
+AcceptQuestUsingDB(94); Log("Accept: [21]A Watchful Eye");
 --Step 1: Entering Redridge Mountains
-AcceptQuestUsingDB(20); Log("Accepting quest: [21]Blackrock Menace");
-AcceptQuestUsingDB(125); Log("Accepting quest: [26]The Lost Tools");
-AcceptQuestUsingDB(122); Log("Accepting quest: [18]Undeerbelly Scales");
-AcceptQuestUsingDB(124); Log("Accepting quest: [20]A Baying of Gnolls");
-AcceptQuestUsingDB(116); Log("Accepting quest: [15]Dry Times");
-AcceptQuestUsingDB(127); Log("Accepting quest: [21]Selling Fish");
-AcceptQuestUsingDB(150); Log("Accepting quest: [20]Murloc Poachers");
-AcceptQuestUsingDB(92); Log("Accepting quest: [18]Redridge Goulash");
-AcceptQuestUsingDB(3741); Log("Accepting quest: [15]Hillary's Necklace");
+AcceptQuestUsingDB(20); Log("Accept: [21]Blackrock Menace");
+AcceptQuestUsingDB(125); Log("Accept: [26]The Lost Tools");
+AcceptQuestUsingDB(122); Log("Accept: [18]Undeerbelly Scales");
+AcceptQuestUsingDB(124); Log("Accept: [20]A Baying of Gnolls");
+AcceptQuestUsingDB(127); Log("Accept: [21]Selling Fish");
+AcceptQuestUsingDB(150); Log("Accept: [20]Murloc Poachers");
+AcceptQuestUsingDB(92); Log("Accept: [18]Redridge Goulash");
+AcceptQuestUsingDB(89); Log("Accept: [20]The Everstill Bridge");
+AcceptQuestUsingDB(1097); Log("Accept: [15]Elmore's Task");
+AcceptQuestUsingDB(118); Log("Accept: [18]The Price of Shoes");
+AcceptQuestUsingDB(91); Log("Accept: [23]Solomon's Law");
+AcceptQuestUsingDB(120); Log("Accept: [14]Messenger to Stormwind");
+AcceptQuestUsingDB(34); Log("Accept: [24]An Unwelcome Guest");
 
-CompleteObjectiveOfQuest(3741,1); Log("Completing Quest Objective: [15]Hillary's Necklace");
-CompleteObjectiveOfQuest(125,1); Log("Completing Quest Objective: [26]The Lost Tools");
-TurnInQuestUsingDB(125); Log("Turning in Quest: [26]The Lost Tools"); 
-AcceptQuestUsingDB(89); Log("Accepting quest: [20]The Everstill Bridge");
-TurnInQuestUsingDB(3741); Log("Turning in Quest: [15]Hillary's Necklace");
-CompleteObjectiveOfQuest(92,1); Log("Completing Quest Objective: [18]Redridge Goulash");
-CompleteObjectiveOfQuest(122,1); Log("Completing Quest Objective: [18]Underbelly Scales");
---Step 1.5: Grind to Level 24 before proceeding
+--Step 2: Stormwind HO!!!!!!!!!!!!!!!!!
+if (HasPlayerFinishedQuest(120) ~= true or HasPlayerFinishedQuest(1097) ~= true or HasPlayerFinishedQuest(118) ~= true) then
+    FMloc.Redridge();
+    FlyTo.Stormwind();
+    --******NOTE******--
+    --Quest 120-[14]Messenger to Stormwind
+    --If someone is turning in the Ony quest to him he'll either disappear or
+    --be kneeling for anywhere between 5-20 minutes and the bot will just sit
+    --until he resets.  It may even crash.....Yes, its stupid. Very Stupid.
+    TurnInQuestUsingDB(120); Log("Turn-in: [14]Messenger to Stormwind"); 
+    AcceptQuestUsingDB(121); Log("Accept: [14]Messenger to Stormwind");
+    -----------
+    --20250114-Good Place to see about buying booze for (116)Dry Times.
+    -----------
+    TurnInQuestUsingDB(1097); Log("Turn-in: [15]Elmore's Task");
+    TurnInQuestUsingDB(118); Log("Turn-in: [18]The Price of Shoes");
+    AcceptQuestUsingDB(119); Log("Accept: [18]Return to Verner");
+    -----------
+    --20250114-Good Place to see about buying booze for (116)Dry Times.
+    -----------
+    FMloc.Stormwind();
+    FlyTo.Redridge();
+end
+TurnInQuestUsingDB(119); Log("Turn-in: [18]Return to Verner");
+TurnInQuestUsingDB(121); Log("Turn-in: [14]Messenger to Stormwind");
+AcceptQuestUsingDB(143); Log("Accept: [14]Messenger to Westfall");
+if (HasPlayerFinishedQuest(143) ~= true and IsOnQuest(143) == true) then
+    FMloc.Redridge();
+    FlyTo.Westfall();
+end
+TurnInQuestUsingDB(143); Log("Turn-in: [14]Messenger to Westfall");
+AcceptQuestUsingDB(144); Log("Accept: [14]Messenger to Westfall");
+if (HasPlayerFinishedQuest(144) ~= true and IsOnQuest(144) == true) then
+    FMloc.Westfall();
+    FlyTo.Redridge();
+end
+TurnInQuestUsingDB(144); Log("Turn-in: [14]Messenger to Westfall");
+AcceptQuestUsingDB(145); Log("Accept: [18]Messenger to Darkshire");
+if (HasPlayerFinishedQuest(144) ~= true and IsOnQuest(144) == true) then
+    FMloc.Redridge();
+    FlyTo.Duskwood();
+end
+TurnInQuestUsingDB(145); Log("Turn-in: [14]Messenger to Darkshire");
+AcceptQuestUsingDB(146); Log("Accept: [18]Messenger to Darkshire");
+-----------
+--20250114-Good Place to see about buying booze for (116)Dry Times.
+-----------
+if (IsOnQuest(146) == true and IsOnQuest(163) ~= true) then
+    FMloc.Duskwood();
+end
+--Step 2: The evening chill settles in Duskwood
+AcceptQuestUsingDB(163); Log("Accept: [20]Raven Hill");
+AcceptQuestUsingDB(164); Log("Accept: [23]Deliveries to Sven");
+AcceptQuestUsingDB(245); Log("Accept: [21]Eight-Legged Menances");
+TurnInQuestUsingDB(163); Log("Turn-in: [20]Raven Hill");
+AcceptQuestUsingDB(5); Log("Accept: [20]Jitter's Growling Gut");
+TurnInQuestUsingDB(164); Log("Turn-in: [23]Deliveries to Sven");
+AcceptQuestUsingDB(226); Log("Accept: [21]Wolves At Our Heels");
+CompleteObjectiveOfQuest(245,1); Log("Completing Objective [21]Eight-Legged Menances: (15)Pygmy Venom Web Spider");
+CompleteObjectiveOfQuest(226,1); Log("Completing Objective [21]Wolves At Our Heels: (12) Starving Dire Wolf");
+CompleteObjectiveOfQuest(226,2); Log("Completing Objective [21]Wolves At Our Heels: (8) Rabid Dire Wolf");
+TurnInQuestUsingDB(226);Log("Turn-in: [21]Wolves At Our Heels");
+TurnInQuestUsingDB(245);Log("Turn-in: [21]Eight-Legged Menances");
+TurnInQuestUsingDB(5); Log("Turn-in: [20]Jitter's Growling Gut");
+-----Check for more Pickups
+FP.Duskwood();
+--Step 3: What happens in the Mountains stays in the Mountains
+TurnInQuestUsingDB(119); Log("Turn-in: [18]Return to Verner");
+CompleteObjectiveOfQuest(92,1); Log("Completing Objective [18]Redridge Goulash: (5)Great Goretusk Snout");
+CompleteObjectiveOfQuest(92,2); Log("Completing Objective [18]Redridge Goulash: (5)Tough Condor Meat");
+CompleteObjectiveOfQuest(92,3); Log("Completing Objective [18]Redridge Goulash: (5)Crisp Spider Meat");
+CompleteObjectiveOfQuest(122,1); Log("Completing Objective [18]Undeerbelly Scales: (6)Underbelly Whelp Scale");
+CompleteObjectiveOfQuest(89,1); Log("Completing Objective [20]The Everstill Bridge: (5)Iron Pike");
+CompleteObjectiveOfQuest(89,2); Log("Completing Objective [20]The Everstill Bridge: (5)Iron Rivet");
+CompleteObjectiveOfQuest(124,1); Log("Completing Objective [20]A Baying of Gnolls: (10)Redridge Brute");
+CompleteObjectiveOfQuest(124,2); Log("Completing Objective [20]A Baying of Gnolls: (8)Redridge Mystic");
+--Step 3.5: Back in Town, NOT discussing what happened in the Mountains
+TurnInQuestUsingDB(92); Log("Turn-in: [18]Redridge Goulash");
+TurnInQuestUsingDB(122); Log("Turn-in: [18]Undeerbelly Scales");
+TurnInQuestUsingDB(89); Log("Turn-in: [20]The Everstill Bridge");
+TurnInQuestUsingDB(124); Log("Turn-in: [20]A Baying of Gnolls");
+
+
 
 
 --Step 2: Completing Quest Objectives
 
 
-CompleteObjectiveOfQuest(127,1); Log("Completing Quest Objective: [21]Selling Fish");
-CompleteObjectiveOfQuest(150,1); Log("Completing Quest Objective: [20]Murloc Poachers");
 
 
 
