@@ -1,4 +1,7 @@
 -- Northshire Abbey Questing Profile
+AddNameToAvoidWhiteList("Kobold Vermin")
+AddNameToAvoidWhiteList("Kobold Worker")
+AddNameToAvoidWhiteList("Kobold Laborer")
 StartMobAvoidance()
 UseDBToRepair(true)
 UseDBToSell(true)
@@ -192,6 +195,7 @@ TurnInQuestUsingDB(3904); Log("Turn-in: [4]Milly's Harvest");
 AcceptQuestUsingDB(3905); Log("Accept: [4]Grape Manifest");
 TurnInQuestUsingDB(6); Log("Turn-in: [5]Bounty on Garrick Padfoot");
 TurnInQuestUsingDB(21); Log("Turn-in: [5]Skirmish at Echo Ridge");
+PopMessage("Pathing to turn in [4]Grape Manifest is not working. Feel free to turn in manually");
 AcceptQuestUsingDB(54); Log("Accept: [5]Report to Goldshire");
 if GetPlayerClass() == "Priest" and not HasPlayerFinishedQuest(ClassQuest2ID) then
     AcceptQuestUsingDB(ClassQuest2ID); Log("Accept: "..ClassQuest2Name);
