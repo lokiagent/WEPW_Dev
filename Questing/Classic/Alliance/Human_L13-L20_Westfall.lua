@@ -133,8 +133,6 @@ end
 if GetPlayerClass() ~= "Warlock" then
     BlackListSellVendorByName("Cylina Darkheart");
 end
-BlackListRepairVendorByName("Defias Profiteer");
-BlackListSellVendorByName("Defias Profiteer");
 --BlackListSellVendorByName(string Name);
 --------------------------------------------------------------------------------------
 
@@ -210,6 +208,12 @@ TurnInQuestUsingDB(6285); Log("Turn-in: [10]Return to Lewis");
 TurnInQuestUsingDB(64); Log("Turn-in: [12]The Forgotten Heirloom");
 TurnInQuestUsingDB(151); Log("Turn-in: [14]Poor Old Blanchy");
 CompleteObjectiveOfQuest(9,1); Log("Completing Objective of [14]The Killing Fields: Destroy Harvest Watchers");
+if (ItemCount ("Hops") < 5 and HasItem("Keg of Thunderbrew") ~= true and HasPlayerFinishedQuest(116) ~= true) then
+    HarvestWatcher = {}; 
+    HarvestWatcher[1] = 480; 
+    HopsFarm = CreateObjective("KillMobsAndLoot",1,1,1,103,TableToList(HarvestWatcher));
+    KillMobsUntilItem("Hops",HopsFarm,5);
+end
 TurnInQuestUsingDB(9); Log("Turn-in: [14]The Killing Fields");
 TurnInQuestUsingDB(22); Log("Turn-in: [12]Goretusk Liver Pie");
 TurnInQuestUsingDB(38); Log("Turn-in: [14]Westfall Stew");
@@ -237,12 +241,22 @@ AcceptQuestUsingDB(65); Log("Accepting: [18]The Defias Brotherhood"); --Turnin i
 CompleteObjectiveOfQuest(14,1); Log("Completing Objective of [17]The People's Militia: Defeat 15 Defias Highwaymen, 5 Defias Pathstalkers, and 5 Defias Knuckledusters");
 CompleteObjectiveOfQuest(14,2); Log("Completing Objective of [17]The People's Militia: Defeat 15 Defias Highwaymen, 5 Defias Pathstalkers, and 5 Defias Knuckledusters");
 CompleteObjectiveOfQuest(14,3); Log("Completing Objective of [17]The People's Militia: Defeat 15 Defias Highwaymen, 5 Defias Pathstalkers, and 5 Defias Knuckledusters");
+if ItemCount("Hops") >= 5 then
+    AcceptQuestUsingDB(117);
+    TurnInQuestUsingDB(117);
+end
+-----------
+--20250114-Good Place to see about completing repeatable quest to get booze for (116)Dry Times
+-----------
 TurnInQuestUsingDB(14); Log("Turn-in: [17]The People's Militia");
 --Step 4: And I would walk 500 miles, and I would walk 500 more
 TurnInQuestUsingDB(65); Log("Turn-in: [18]The Defias Brotherhood");
 AcceptQuestUsingDB(132); Log("Accepting: [18]The Defias Brotherhood"); --Turnin in WF
 --While in Redridge
 AcceptQuestUsingDB(244); Log("Accepting: [16]Encroaching Gnolls");
+if HasPlayerFinishedQuest(3741) ~= true or HasPlayerFinishedQuest(125) ~= true then
+    PopMessage("Quests (3741)Hillary's Necklace and (125)The Lost Tools Need Manual Completion.  Please complete now.");
+end
 TurnInQuestUsingDB(244); Log("Turn-in: [16]Encroaching Gnolls");
 AcceptQuestUsingDB(246); Log("Accepting: [17]Assessing the Threat");
 CompleteObjectiveOfQuest(246,1); Log("Completing Objective of [17]Assessing the Threat: Redridge Mongrel 0/10");
@@ -307,7 +321,7 @@ if HasPlayerFinishedQuest(104) ~= true then
     TurnInQuestUsingDB(152); Log("Turn-in: [19]The Coast Isn't Clear");
     TurnInQuestUsingDB(104); Log("Turn-in: [20]The Coastal Menance");
 end
-if HasPlayerFinishedQuest(136) ~= true and HasItem("Captain Sander's Treasure Map") ~= true then 
+if (HasPlayerFinishedQuest(136) ~= true and HasItem("Captain Sander's Treasure Map") ~= true and IsOnQuest(136) ~= true) then 
     Murlocs={458,171};
     KillMurlocs=CreateObjective("KillMobsAndLoot",1,1,1,136,TableToList(Murlocs));
     KillMobsUntilItem("Captain Sander's Treasure Map",KillMurlocs,1);
@@ -316,8 +330,20 @@ if HasItem("Captain Sander's Treasure Map") == true then
     UseItem("Captain Sander's Treasure Map");
 end
 --AcceptQuestUsingDB(136); -- [16] Captain Sanders' Hidden Treasure
-CompleteEntireQuest(136); Log("Completing: [16] Captain Sanders' Hidden Treasure");
-AcceptQuestUsingDB(138); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
+if HasPlayerFinishedQuest(136)==false then
+    QuestGoToPoint(-10512.88, 2110.36, 2.696788);
+    function UseFootLocker() 
+        local Objects = GetObjectList();
+        foreach Object in Objects do
+            if Object.Name == "Captain's Footlocker" then
+                Log("Found the Captain's Footlocker!");
+                InteractWithObject(Object);
+                SleepPlugin(5000);
+            end; -- IF
+        end; -- For Each
+    end; -- Function
+    UseFootLocker();
+end;AcceptQuestUsingDB(138); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
 if HasPlayerFinishedQuest(138)==false then
     QuestGoToPoint(-10514.52, 1598.402, 44.1889);
     function UseBarrel() 
@@ -350,16 +376,14 @@ end;
 AcceptQuestUsingDB(140); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
 --CompleteEntireQuest(140); Log("Completing: [16] Captain Sanders' Hidden Treasure"); -- Can't Complete at this time due to Mesh issues with water
 
-AcceptQuestUsingDB(136); Log("Grinding Murlocs to pick up Captain Sander's Treasure Map");
-TurnInQuestUsingDB(136); Log("Turn-In:")
-if (Player.Level < 21) then 
-    Log("Grind to 21");
-    QuestGoToPoint(-10984.42, 2092.964, 2.36268);
-    Grind21 = {};
-    Grind21[1] = 1216;
-    Grind21 = CreateObjective("KillMobsAndLoot",1,10,1,152,TableToList(Grind21));
-    GrindUntilLvl(21,Grind21,true);
-end;
+--if (Player.Level < 21) then 
+--    Log("Grind to 21");
+--    QuestGoToPoint(-10984.42, 2092.964, 2.36268);
+--    Grind21 = {};
+--    Grind21[1] = 1216;
+--    Grind21 = CreateObjective("KillMobsAndLoot",1,10,1,152,TableToList(Grind21));
+--    GrindUntilLvl(21,Grind21,true);
+--end;
 -- End of Profile
 Log("This is the end of Westfall questing profile");
 StopQuestProfile(); 
