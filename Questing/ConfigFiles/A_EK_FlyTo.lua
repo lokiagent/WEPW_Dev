@@ -11,11 +11,25 @@ function FlyTo.Duskwood()
     for _ = 1, 3 do
         UseMacro("Gossip1")
         SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
         UseMacro(FPDuskwood)
+        SleepPlugin("2000")
+    end
+end
+function FlyTo.Ironforge()
+    Log("Flying to Ironforge")
+    for _ = 1, 3 do
+        UseMacro("Gossip1")
+        SleepPlugin(2000)
+        UseMacro("FPIronforge")
+        SleepPlugin(2000)
+    end
+end
+function FlyTo.LochModan()
+    Log("Flying to Loch Modan")
+    for _ = 1, 3 do
+        UseMacro("Gossip1")
+        SleepPlugin(2000)
+        UseMacro("FPLochModan")
         SleepPlugin(2000)
     end
 end
@@ -24,11 +38,7 @@ function FlyTo.Redridge()
     for _ = 1, 3 do
         UseMacro("Gossip1")
         SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro(FPRedridge)
+        UseMacro("FPRedridge")
         SleepPlugin(2000)
     end
 end
@@ -37,11 +47,7 @@ function FlyTo.Stormwind()
     for _ = 1, 3 do
         UseMacro("Gossip1")
         SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro(FPStormwind)
+        UseMacro("FPStormwind")
         SleepPlugin(2000)
     end
 end
@@ -50,11 +56,7 @@ function FlyTo.Westfall()
     for _ = 1, 3 do
         UseMacro("Gossip1")
         SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro(FPWestfall)
+        UseMacro("FPWestfall")
         SleepPlugin(2000)
     end
 end
