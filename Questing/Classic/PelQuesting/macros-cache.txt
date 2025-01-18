@@ -1,0 +1,166 @@
+VER 3 00000000000015EA "384RhapsodyMalt" "132534"
+/run for i=1,GetMerchantNumItems()do if GetMerchantItemInfo(i)=="Rhapsody Malt" then BuyMerchantItem(i,1)break end end
+END
+VER 3 0000000000000E0E "_TSMDestrot" "135952"
+/tsm destroy
+END
+VER 3 0000000000001664 "AbandonQuests" "INV_MISC_QUESTIONMARK"
+/run SS:AbandonQuests()
+END
+VER 3 0000000000001652 "AcceptRess" "INV_Misc_QuestionMark"
+/run RetrieveCorpse();
+END
+VER 3 000000000000164E "BuyItems" "INV_Misc_QuestionMark"
+/run owGAZFIm();
+END
+VER 3 000000000000164C "Camp" "INV_Misc_QuestionMark"
+/camp
+END
+VER 3 00000000000015C5 "ConjureWater" "132793"
+/cast Conjure Water
+END
+VER 3 0000000000001657 "DeleteItems" "INV_Misc_QuestionMark"
+/run FTjQBYUS();
+END
+VER 3 000000000000164F "DeleteTrash" "INV_Misc_QuestionMark"
+/run iSBQEnbJ();
+END
+VER 3 0000000000001665 "Destroy" "INV_MISC_QUESTIONMARK"
+/dejunk destroy start
+/dejunk destroy next
+END
+VER 3 0000000000001659 "EnterBG" "INV_Misc_QuestionMark"
+/click PVPReadyDialogEnterBattleButton
+END
+VER 3 0000000000001260 "FPDuskwood" "132128"
+/run local n="Darkshire"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 00000000000012E3 "FPIronforge" "132128"
+/run local n="Ironforge"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 0000000000001360 "FPLochModan" "132128"
+/run local n="Thelsamar"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 000000000000125F "FPRedridge" "132128"
+/run local n="Lakeshire"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 000000000000125E "FPStormwind" "132128"
+/run local n="Stormwind"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 0000000000001261 "FPWestfall" "132128"
+/run local n="Sentinel Hill"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 00000000000012B5 "Gossip01" "135906"
+/script SelectGossipOption(1)
+END
+VER 3 000000000000165D "Gossip1" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(1)
+END
+VER 3 000000000000165E "Gossip2" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(2)
+END
+VER 3 000000000000165F "Gossip3" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(3)
+END
+VER 3 0000000000001660 "Hearthstone1" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(1);
+/script C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+END
+VER 3 0000000000001661 "Hearthstone2" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(2);
+/script C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+END
+VER 3 0000000000001662 "Hearthstone3" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(3);
+/script C_PlayerInteractionManager.ConfirmationInteraction(Enum.PlayerInteractionType.Binder)
+END
+VER 3 0000000000001669 "Ironforge" "INV_MISC_QUESTIONMARK"
+/run local n="Ironforge"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 000000000000166A "Lakeshire" "INV_MISC_QUESTIONMARK"
+/run local n="Lakeshire"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 0000000000001663 "LastTarget" "INV_MISC_QUESTIONMARK"
+/targetlasttarget
+END
+VER 3 000000000000164A "LeaveBG" "INV_Misc_QuestionMark"
+/click WorldStateScoreFrameLeaveButton
+END
+VER 3 0000000000001654 "Lure" "INV_Misc_QuestionMark"
+/use ;
+/use 16;
+END
+VER 3 000000000000166C "Moonglade" "INV_MISC_QUESTIONMARK"
+/run local n="Moonglade"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 0000000000001648 "MountMe" "INV_Misc_QuestionMark"
+/use 
+END
+VER 3 0000000000001658 "PVPFrame2" "INV_Misc_QuestionMark"
+/click PVPParentFrameTab2
+END
+VER 3 0000000000001650 "QueBG" "INV_Misc_QuestionMark"
+/click BattlegroundType1
+/click BattlefieldFrameJoinButton
+END
+VER 3 000000000000165C "ReleaseCorpse" "INV_Misc_QuestionMark"
+/run RepopMe();
+END
+VER 3 0000000000000075 "RELOAD" "136152"
+/reload
+END
+VER 3 000000000000165A "ReloadUI" "INV_Misc_QuestionMark"
+/reload
+END
+VER 3 0000000000001655 "RepairItems" "INV_Misc_QuestionMark"
+/run SelectGossipOption(1); RepairAllItems();
+END
+VER 3 0000000000001666 "Reset" "INV_MISC_QUESTIONMARK"
+/script ResetInstances();
+END
+VER 3 000000000000166D "Rhapsody" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(2);
+/run BuyMerchantItem(1)
+END
+VER 3 0000000000001653 "SelectQuest1" "INV_Misc_QuestionMark"
+/click QuestTitleButton1;
+END
+VER 3 000000000000164B "SelectQuest2" "INV_Misc_QuestionMark"
+/click QuestTitleButton2;
+END
+VER 3 000000000000165B "SellItems" "INV_Misc_QuestionMark"
+/run BmVgxBQv();
+END
+VER 3 0000000000001656 "SellJunk" "INV_Misc_QuestionMark"
+/run aivAutKu();
+END
+VER 3 000000000000164D "SendMail" "INV_Misc_QuestionMark"
+/run NSMAljrV();
+END
+VER 3 000000000000166B "Sentinel Hill" "INV_MISC_QUESTIONMARK"
+/run local n="Sentinel Hill"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 0000000000000224 "Shoot" "132317"
+/cast !Shoot
+END
+VER 3 0000000000001667 "Stormwind" "INV_MISC_QUESTIONMARK"
+/run local n="Stormwind"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 000000000000119F "TargetFM" "132128"
+/tar Ariena
+/run if UnitExists("target") then InteractUnit("target") end
+/script SelectGossipOption(1)
+END
+VER 3 0000000000001668 "Thelsamar" "INV_MISC_QUESTIONMARK"
+/run local n="Thelsamar"; for i=1, NUM_TAXI_BUTTONS do if TaxiNodeName(_G["TaxiButton"..i]:GetID()):lower():find(n:lower()) then TakeTaxiNode(i) return; end end;
+END
+VER 3 000000000000166E "ThunderAle" "INV_MISC_QUESTIONMARK"
+/script SelectGossipOption(2);
+/run BuyMerchantItem(2)
+END
+VER 3 0000000000000148 "Training" "132320"
+/run LoadAddOn"Blizzard_TrainerUI" f=ClassTrainerTrainButton f.e = 0 if f:GetScript"OnUpdate" then f:SetScript("OnUpdate", nil)else f:SetScript("OnUpdate", function(f,e) f.e=f.e+e if f.e=.01 then f.e=0 f:Click() end end)end 
+END
+VER 3 0000000000001649 "TrainMe" "INV_Misc_QuestionMark"
+/run LoadAddOn"Blizzard_TrainerUI" f=ClassTrainerTrainButton f.e = 0 if f:GetScript"OnUpdate" then f:SetScript("OnUpdate", nil)else f:SetScript("OnUpdate", function(f,e) f.e=f.e+e if f.e>.01 then f.e=0 f:Click() end end)end
+END

@@ -7,7 +7,7 @@ UseDBToRepair(true)
 UseDBToSell(true)
 SetQuestRepairAt(30)
 SetQuestSellAt(2)
-IgnoreLowLevelQuests=false
+IgnoreLowLevelQuests = false
 
 --Varibales--
 Player = GetPlayer();
@@ -130,9 +130,9 @@ KillKoboldLaborers = CreateObjective("KillMobsAndLoot",1,12,1,21,TableToList(Kob
 ---                          End Manual Quest Objectives                           ---
 --------------------------------------------------------------------------------------
 --Step 0: Initial Grind
-if Player.Level < 3 then
-    Log("Player is under Level 3, Proceeding to Grind at Northshire Abbey");
-    GrindAreaUntilLevel(3,{299,6},true);
+if GetPlayer().Level < 4 then
+    Log("Player is under Level 4, Proceeding to Grind at Northshire Abbey");
+    GrindAreaUntilLevel(4);
 end
 --Step 1: A Noob's First Quests
 AcceptQuestUsingDB(783); Log("Accept: [1]A Threat Within");
@@ -146,12 +146,6 @@ DoObjective(KillKoboldVermin); Log("Complete: [2]Kobold Camp Cleanup; Objective(
 TurnInQuestUsingDB(33); Log("Turn-in: [2]Wolves Across the Border");
 TurnInQuestUsingDB(7); Log("Turn-in: [2]Kobold Camp Cleanup");
 AcceptQuestUsingDB(15); Log("Accept: [3]Investigate Echo Ridge");
---Step 1.25: Grind to Level 4 so we can train more skills & a little selling after
-if Player.Level < 4 then
-    Log("Player is under Level 4, Proceeding to Grind at Northshire Abbey");
-    GrindAreaUntilLevel(4);
-    PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
-end
 --Step 1.5: Class Quests and Training
 if not HasPlayerFinishedQuest(ClassQuest1ID) then
     CompleteEntireQuest(ClassQuest1ID); Log("Accept&Complete: "..ClassQuest1Name);
@@ -184,10 +178,10 @@ CompleteObjectiveOfQuest(3904,1); Log("Complete: [4]Milly's Harvest; Objective(s
 --GrindAndGather(TableToList(11119),250,TableToFloatArray({-9055.347,-337.7026,74.02544}), false);
 CompleteObjectiveOfQuest(6,1); Log("Complete: [5]Bounty on Garrick Padfoot; Objective(s): Bounty on Garrick Padfoot");
 --Step 3.5: Bad Deku! Bad! No secret training when All Might said quest!
-if Player.Level < 7 then
-    Log("Player is under Level 7, Proceeding to Grind at Northshire Abbey");
+if Player.Level < 6 then
+    Log("Player is under Level 6, Proceeding to Grind at Northshire Abbey");
     --BlackListUnitGUID(103); --Adding Padfoot to the Blacklist so we don't interfere with other's questing
-    GrindUntilLevel(7,TableToList{38},true);
+    GrindAreaUntilLevel(6);
     PreferredVendor(); Log("Preferred Vendor: Godric Rothgar");
 end
 --Step 4: Eurupe's: The Final (Class)Questdown
@@ -211,6 +205,10 @@ TurnInQuestUsingDB(2158); Log("Turn-in: [5]Rest and Relaxation");
 --(For those that read this shit and actually want to know what QED means: https://en.wikipedia.org/wiki/Q.E.D.)
 Log("[Northshire Abbey] Questing completed!");
 
-StopQuestProfile();
+if HasPlayerFinishedQuest(2158) == true then
+	LoadAndRunQuestProfile("Classic\\PelQuesting\\AllianceQuesting_01-60.lua")
+else
+    StopQuestProfile();
+end
 
---LoadAndRunQuestProfile(Human_L06-13_ElwynnForest.lua)
+

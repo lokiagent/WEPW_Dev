@@ -19,54 +19,12 @@ TrainFirstAid = false;
 TrainFishing = false;
 TrainCooking = false;
 -----------------------------------Flight Functions-----------------------------------
-local function HandleFlightPath(name, coords)
-    Log("Starting " .. name .. " flight path function")
-    QuestGoToPoint(table.unpack(coords))
-    foreach Unit in Units do
-    Log(unit.Name)
-        if unit.Name == name and IsUnitValid(unit) then
-            Log("Found flight master!")
-            InteractWithUnit(unit)
-            SleepPlugin(5000)
-            return
-        end
-    end
-end
-local function FlyToDestination(Destination)
-    Log("Flying to " .. Destination)
-    for _ = 1, 3 do
-        UseMacro("Gossip1")
-        SleepPlugin(2000)
-        UseMacro(Destination)
-        SleepPlugin(2000)
-    end
-    --SleepPlugin( or 90000)
-end
--- Flight Path Functions
-function WestfallFP()
-    HandleFlightPath("Thor", { -10627.74, 1038.647, 34.12702 })
-end
-function StormwindFP()
-    HandleFlightPath("Dungar Longdrink", { -8834.801, 487.8065, 109.6138 })
-end
-function RedridgeFP()
-    HandleFlightPath("Ariena Stormfeather", { -9434.632, -2235.667, 69.05429 })
-end
-function DarkshireFP()
-    HandleFlightPath("Felicia Maline", { -10513.16, -1259.571, 41.42373 })
-end
-function FlyToStormwind()
-    FlyToDestination("Stormwind")
-end
-function FlyToWestfall()
-    FlyToDestination("Sentinel Hill")
-end
-function FlyToRedridgeMountains()
-    FlyToDestination("Lakeshire")
-end
-function FlyToDuskwood()
-    FlyToDestination("Darkshire")
-end
+local _EK_FlightPaths = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlightPaths.lua")
+local FMloc -- Declare the Test variable in this scope
+FMloc = _EK_FlightPaths()
+local _EK_FlyTo = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlyTo.lua")
+local FlyTo
+FlyTo = _EK_FlyTo()
 --------------------------------------------------------------------------------------
 --------------------------local Functions to be Used Elswhere-------------------------
 --------------------------------------------------------------------------------------
@@ -375,15 +333,11 @@ if HasPlayerFinishedQuest(139)==false then
 end;
 AcceptQuestUsingDB(140); Log("Accepting: [16] Captain Sanders' Hidden Treasure");
 --CompleteEntireQuest(140); Log("Completing: [16] Captain Sanders' Hidden Treasure"); -- Can't Complete at this time due to Mesh issues with water
+if Player.Race == "Human" then
+    FMloc.Westfall();
+    FlyTo.Ironforge();
+end
 
---if (Player.Level < 21) then 
---    Log("Grind to 21");
---    QuestGoToPoint(-10984.42, 2092.964, 2.36268);
---    Grind21 = {};
---    Grind21[1] = 1216;
---    Grind21 = CreateObjective("KillMobsAndLoot",1,10,1,152,TableToList(Grind21));
---    GrindUntilLvl(21,Grind21,true);
---end;
 -- End of Profile
 Log("This is the end of Westfall questing profile");
 StopQuestProfile(); 

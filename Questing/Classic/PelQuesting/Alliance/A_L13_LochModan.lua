@@ -9,11 +9,9 @@ Player = GetPlayer();
 
 -----------------------------------Flight Functions-----------------------------------
 local _EK_FlightPaths = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlightPaths.lua")
-local FMloc -- Declare the Test variable in this scope
-FMloc = _EK_FlightPaths()
+local FMloc = _EK_FlightPaths()
 local _EK_FlyTo = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlyTo.lua")
-local FlyTo
-FlyTo = _EK_FlyTo()
+local FlyTo = _EK_FlyTo()
 --------------------------------------------------------------------------------------
 --------------------------local Functions to be Used Elswhere-------------------------
 --------------------------------------------------------------------------------------
@@ -203,8 +201,8 @@ CompleteObjectiveOfQuest(217,3); Log("Completing Objective [17]In Defense of the
 TurnInQuestUsingDB(217); Log("Turn-in: [17]In Defense of the King's Land");
 
 --Step 4: A Brief Flight to Stormwind for some R&R
-if IsOnQuest(1338) and (GetZoneID() ~= 1429 and GetZoneID() ~= 1453) then
-    FMloc.LochModan();
+if IsOnQuest(1338) then
+    FMloc.ByZone();
     FlyTo.Stormwind();
 end
 TurnInQuestUsingDB(1338); Log("Turn-in: [14]Stormpike's Orders");
@@ -215,7 +213,7 @@ AcceptQuestUsingDB(344); Log("Accept: [24]Brother Paxton");
 TurnInQuestUsingDB(343); Log("Turn-in: [24]Brother Paxton");
 AcceptQuestUsingDB(345); Log("Accept: [24]Ink Supplies");
 if IsOnQuest(2039) then
-    FMloc.Stormwind();
+    FMloc.ByZone();
     FlyTo.LochModan();
 end
 
@@ -231,6 +229,19 @@ CompleteObjectiveOfQuest(2038,3); Log("Completing Objective [15]Bingles' Missing
 CompleteObjectiveOfQuest(2038,4); Log("Completing Objective [15]Bingles' Missing Supplies: Bingles' Blastencapper");
 TurnInQuestUsingDB(2038); Log("Turn-in: [15]Bingles' Missing Supplies");
 TurnInQuestUsingDB(436); Log("Turn-in: [18]Ironband's Excavation");
-
+AcceptQuestUsingDB(297); Log("Accept: [18]Gathering Idols");
+AcceptQuestUsingDB(298); Log("Accept: [15]Excavation Progress Report");
+CompleteObjectiveOfQuest(297,1); Log("Completing Objective [18]Gathering Idols: (8)Carved Stone Idol");
+TurnInQuestUsingDB(297); Log("Turn-in: [18]Gathering Idols");
+AcceptQuestUsingDB(385); Log("Accept: [15]Crockolisk Hunting");
+AcceptQuestUsingDB(257); Log("Accept: [16]A Huntet's Boast");
+CompleteObjectiveOfQuest(385,1); 
+CompleteObjectiveOfQuest(385,2);
+CompleteObjectiveOfQuest(257,1);
+TurnInQuestUsingDB(257);
+TurnInQuestUsingDB(385);
+AcceptQuestUsingDB(258);
+CompleteObjectiveOfQuest(258,1);
+TurnInQuestUsingDB(258);
 
 StopQuestProfile(); -- Stop the quest profile

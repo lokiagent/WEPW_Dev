@@ -11,13 +11,11 @@ Player = GetPlayer();
 Log("Current Zone ID: "..GetZoneID());
 Log("Current Player Position:"..GetPlayer().Position);
 
---Profession Choices, Off by Default.  Set to True to enable these options.
-TrainHerbalism = false;
-TrainSkinning = false;
-TrainMining = false;
-TrainFirstAid = false;
-TrainFishing = false;
-TrainCooking = false;
+-----------------------------------Flight Functions-----------------------------------
+local _EK_FlightPaths = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlightPaths.lua")
+local FMlocc = _EK_FlightPaths()
+local _EK_FlyTo = loadfile("Profiles\\Questing\\Classic\\PelQuesting\\ConfigFiles\\A_EK_FlyTo.lua")
+local FlyTo = _EK_FlyTo()
 -----------------------------------Flight Functions-----------------------------------
 local function HandleFlightPath(name, coords)
     Log("Starting " .. name .. " flight path function")
@@ -94,13 +92,6 @@ end
 if GetPlayerClass() == "Warrior" then
     ClassTrainer = "Lyria Du Lac"; ClassTrainerX = -9461.679; ClassTrainerY = 110.8836; ClassTrainerZ = 57.78799;
 end
-FirstAidTrainer="Michelle Belle"; FirstAidTrainerX=-9457.135; FirstAidTrainerY=28.47216; FirstAidTrainerZ=63.82029;
-CookingTrainer="Tomas"; CookingTrainerX=-9467.531; CookingTrainerY=-2.986725; CookingTrainerZ=56.95;
-FishingTrainer="Lee Brown"; FishingTrainerX=-9382.862; FishingTrainerY=-116.7068; FishingTrainerZ=58.814;
-FishingLocation="Elwynn Forest"; FishingLocationX=-9387.996; FishingLocationY=-120.6893; FishingLocationZ=58.28284;
-SkinningTrainer="Helene Peltskinner"; SkinningTrainerX=-9380.401; SkinningTrainerY=-70.4082; SkinningTrainerZ=64.43704;
-HerbalismTrainer="Herbalist Pomeroy"; HerbalismTrainerX=-9058.348; HerbalismTrainerY=150.7797; HerbalismTrainerZ=115.033;
-MiningTrainer="Gelman Stonehand"; MiningTrainerX=-8433.104; MiningTrainerY=694.3175; MiningTrainerZ=103.3633;
 Log("Class Quest ID: "..ClassQuest1ID.." Name: "..ClassQuest1Name);
 Log("ClassTrainer: "..ClassTrainer.." X: "..ClassTrainerX.." Y: "..ClassTrainerY.." Z: "..ClassTrainerZ);
 --------------------------------------------------------------------------------------
@@ -196,42 +187,11 @@ Wood = {176793}
 --    TurnInQuestUsingDB(ClassQuest2ID); Log("Completing: "..ClassQuest2Name);
 --    CompleteEntireQuest(ClassQuest4ID); Log("Completing: "..ClassQuest4Name);
 --end
---Step 0.5: Getting Configured Profession Training
-Log("Player Herbalism Status:" ..HasSkill(182));
-if TrainHerbalism and not HasSkill(182) then
-    GoToTrainer(HerbalismTrainer, HerbalismTrainerX, HerbalismTrainerY, HerbalismTrainerZ); Log("Go to Trainer: Herbalism");
-    Training(); Log("Training Herbalism");
-end
-Log("Player Skinning Status:" ..SkillValue(393));
-if TrainSkinning and not HasSkill(393) then
-    GoToTrainer(SkinningTrainer, SkinningTrainerX, SkinningTrainerY, SkinningTrainerZ); Log("Go to Trainer: Skinning");
-    Training(); Log("Training Skinning");
-end
---Log("Player Mining Status:" ..HasSkill(186));
---if TrainMining and not HasSkill(186)then
---    GoToTrainer(MiningTrainer, MiningTrainerX, MiningTrainerY, MiningTrainerZ); Log("Go to Trainer: Mining");
---    Training(); Log("Training Mining");
---end
-Log("Player First Aid Status:" ..HasSkill(129));
-if TrainFirstAid and not HasSkill(129) then
-    GoToTrainer(FirstAidTrainer, FirstAidTrainerX, FirstAidTrainerY, FirstAidTrainerZ); Log("Go to Trainer: First Aid");
-    Training(); Log("Training First Aid");
-end
-Log("Player Fishing Status:" ..HasSkill(356));
-if TrainFishing and not HasSkill(356) then
-    GoToTrainer(FishingTrainer, FishingTrainerX, FishingTrainerY, FishingTrainerZ); Log("Go to Trainer: Fishing");
-    Training(); Log("Training Fishing");
-end
-Log("Player Cooking Status:" ..HasSkill(185));
-if TrainCooking and not HasSkill(185) then
-    GoToTrainer(CookingTrainer, CookingTrainerX, CookingTrainerY, CookingTrainerZ); Log("Go to Trainer: Cooking");
-    Training(); Log("Training Cooking");
-end
 -- Grinding to Level 9
-while Player.Level >= 7 and Player.Level < 9 do
-    Log("Current Level: " .. Player.Level .. " Grinding to 9...");
-    GrindAndGather(TableToList{40,475,1731}, 100, TableToFloatArray({-9827.172, 173.0875, 8.603938}), false); Log("Grinding");
-    --GrindAreaUntilLevel(9,TableToList{30,113},true);
+if Player.Level >= 6 and Player.Level < 8 then
+    Log("Current Level: " .. Player.Level .. " Grinding to 8...");
+    --GrindAndGather(TableToList{40,475,1731}, 100, TableToFloatArray({-9827.172, 173.0875, 8.603938}), false); Log("Grinding");
+    GrindAreaUntilLevel(8);
 end
 ----Step 1: Questing So Massive you wouldn't believe it
 AcceptQuestUsingDB(62); Log("Accepting: [7]The Fargodeep Mine");
@@ -287,7 +247,7 @@ TurnInQuestUsingDB(334); Log("Completing: [2]Package for Thurman");
 --Step 3: Some Murloc Genocide with a Good Dose of Taxidermy Afterwards
 TurnInQuestUsingDB(107); Log("Completing: [6]Note to William");
 AcceptQuestUsingDB(112); Log("Accepting: [7]Collecting Kelp");
-if ((HasPlayerFinishedQuest(112) == true) and (HasPlayerFinishedQuest(112) ~= true)) then
+if ((CanTurnInQuest(112) ~= true) and (HasPlayerFinishedQuest(112) ~= true)) then
     CompleteEntireQuest(112); Log("Completing Objective: [7]Collecting Kelp");
     SleepPlugin(10000);
 end
@@ -300,8 +260,11 @@ if (IsOnQuest(35) == true and IsOnQuest(37) ~= true) then
     GoToTrainer(ClassTrainer, ClassTrainerX, ClassTrainerY, ClassTrainerZ); Log("Go to Trainer: "..ClassTrainer);
     Training(); Log("Training: "..Player.Class);
 end
-if (HasPlayerFinishedQuest(76) ~= true and CanTurnInQuest(76) ~= true) then
-    QuestGoToPoint(-9096.079, -564.0419, 62.24914); -- Scout Through the Jasperlode Mine
+if (HasPlayerFinishedQuest(76) ~= true) then
+  --  MotherFangID=471; MFloc=GetNPCPostionFromDB(471); MFX=MFloc[0]; MFY=MFloc[1]; MFZ=MFloc[2];
+--    QuestGoToPoint(MFX, MFY, MFZ); --Using Mother Fang's Location because this pathing is being a PITA
+
+    --QuestGoToPoint(-9096.079, -564.0419, 62.24914); -- Scout Through the Jasperlode Mine
 end
 TurnInQuestUsingDB(35); Log("Completing: [10]Further Concerns");
 AcceptQuestUsingDB(37); Log("Accepting: [10]Find the Lost Guards");
@@ -317,7 +280,9 @@ end
 TurnInQuestUsingDB(45); Log("Completing: [10]Discover Rolf's Fate");
 AcceptQuestUsingDB(71); Log("Accepting: [10]Report to Thomas");
 --Custom Gather for [9]A Bundle of Trouble
-GrindAndGather(TableToList(Wood),250,TableToFloatArray({-9431.718,-1304.944,47.10697}),false,"BundleOfWood"); Log("Gathering Bundles of Wood for [9]A Bundle of Trouble")
+if HasPlayerFinishedQuest(5545) ~= true and ItemCount("Bundle of Wood") < 8 then
+    GrindAndGather(TableToList(Wood),250,TableToFloatArray({-9431.718,-1304.944,47.10697}),false,"BundleOfWood"); Log("Gathering Bundles of Wood for [9]A Bundle of Trouble")
+end
 --CompleteObjectiveOfQuest(5545,1); Log("Completing Objective: [9]A Bundle of Trouble");
 CompleteEntireQuest(52); Log("Completing: [10]Protect the Frontier:Killing Forest Bears");
 if (IsOnQuest(5545) == true and IsOnQuest(83) ~= true) then
@@ -333,6 +298,7 @@ AcceptQuestUsingDB(39); Log("Accepting: [10]Deliver Thomas' Report");
 AcceptQuestUsingDB(109); Log("Accepting: [10]Report to Gyran Stoutmantle");
 CompleteObjectiveOfQuest(88,1); Log("Completing Objective: [9]Princess Must Die!");
 --Step 3: Getting your Drop Quest On
+AcceptQuestUsingDB(184); Log("Grind And Accept: [10]Furlbrow's Deed'");
 --if HasPlayerFinishedQuest(184) ~= true then
 --    if (HasItem("Furlbrow's Deed") ~= true and HasItem("Westfall Deed") ~= true) then
 --        GrindAndGather(TableToList(DefiasRogueWizard), 100, TableToFloatArray({-9122.16,-1019.184,72.52368}), false); Log("Grinding to get: Westfall Deed");
@@ -341,6 +307,7 @@ CompleteObjectiveOfQuest(88,1); Log("Completing Objective: [9]Princess Must Die!
 --        UseItem("Westfall Deed");
 --    end
 --end
+AcceptQuestUsingDB(123); Log("Grind and Accept: [10]The Collector");
 --if HasPlayerFinishedQuest(123) ~= true then
 --    if (HasItem("Gold Pickup Schedule") ~= true and HasItem("The Collector's Schedule") ~= true) then
 --        GrindAndGather(TableToList(RiverpawGnolls), 200, TableToFloatArray({-8989.872, -764.0568, 74.30352}), false); Log("Grinding to get: Gold Pickup Schedule");
@@ -351,15 +318,16 @@ CompleteObjectiveOfQuest(88,1); Log("Completing Objective: [9]Princess Must Die!
 --Step 3.5: A litte bit more Grinding
 -- Grinding to Level 11
 if Player.Level >= 9 and Player.Level < 11 then
-    Log("Current Level: " .. Player.Level .. " Grinding to 12...");
+    Log("Current Level: " .. Player.Level .. " Grinding to 11...");
     QuestGoToPoint(-9122.16,-1019.184,72.52368);
-    GrindAreaUntilLevel(11,TableToList{DefiasRogueWizard}, true);
+    GrindUntilLevel(11,TableToList{DefiasRogueWizard}, true);
 end
 --Step 4: The Long and Winding Turn in Road
+CompleteObjectiveOfQuest(83,1); Log("Completing Objective [9]Red Linen Goods (6)Red Linen Bandana");
 TurnInQuestUsingDB(83); Log("Completing: [9]Red Linen Goods");
 if HasPlayerFinishedQuest(39) ~= true then
     RedridgeFP(); Log("Discover and Use the Redrdige Mountains FP");
-    FlyToStormwind(); Log("Flying to Stormwind");
+    FlyTo.Stormwind(); Log("Flying to Stormwind");
 end
 AcceptQuestUsingDB(399); Log("Accepting: [15]Humble Beginnings");
 TurnInQuestUsingDB(39); Log("Completing: [10]Deliver Thomas' Report'");
@@ -389,9 +357,9 @@ AcceptQuestUsingDB(22); Log("Goretusk Liver Pie");
 TurnInQuestUsingDB(109); Log("Completing: [10]Report to Gryan Stoutmountle");
 CompleteEntireQuest(6181); Log("Accepting: [10]A Swift Message");
 AcceptQuestUsingDB(6281); Log("Continue to Stormwind");
-if HasPlayerFinishedQuest(6281)==false and GetZoneID() == 1436 then
-    WestfallFP();
-    FlyToStormwind();
+if HasPlayerFinishedQuest(6281)==false then
+    FMloc.ByZone();
+    FlyTo.Stormwind();
 end
 TurnInQuestUsingDB(6281); Log("Completing: [10]Continue to Stormwind");
 AcceptQuestUsingDB(6261); Log("Accepting: [10]Dungar Longdrink");
@@ -399,9 +367,9 @@ GoToTrainer(SWClassTrainer, SWClassTrainerX, SWClassTrainerY, SWClassTrainerZ); 
 Training(); Log("Training: "..Player.Class);
 TurnInQuestUsingDB(6261); Log("Completing: [10]Dungar Longdrink");
 AcceptQuestUsingDB(6285); Log("Return To Lewis");
-if HasPlayerFinishedQuest(59)==false and GetZoneID() == 1453 then
-    StormwindFP();
-    FlyToRedridgeMountains();
+if HasPlayerFinishedQuest(59)==false then
+    FMloc.ByZone();
+    FlyTo.Redridge();
 end
 TurnInQuestUsingDB(59); Log("Completing: Cloth and Leather Armor");
 CompleteObjectiveOfQuest(147,1); Log("Completing Objective: [10]Manhunt");
@@ -414,5 +382,9 @@ TurnInQuestUsingDB(11); Log("Completing: [10]Riverpaw Gnoll Bounty");
 TurnInQuestUsingDB(6285); Log("Completing: [10]Return to Lewis");
 
 Log("Elwynn Forest Now Complete");
-    
-StopQuestProfile();
+
+if HasPlayerFinishedQuest(6285) == true then
+	LoadAndRunQuestProfile("Classic\\PelQuesting\\AllianceQuesting_01-60.lua")
+else
+    StopQuestProfile();
+end
